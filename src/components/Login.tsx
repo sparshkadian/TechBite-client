@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const Login = ({
   setLogin,
 }: {
-  setLogin: React.Dispatch<React.SetStateAction<boolean>>;
+  setLogin: React.Dispatch<React.SetStateAction<string | boolean>>;
 }) => {
   const [viewPassword, setViewPassword] = useState(false);
 
@@ -42,6 +42,7 @@ const Login = ({
             />
             <img
               onClick={() => {
+                window.localStorage.setItem('login', JSON.stringify(false));
                 setViewPassword((prev) => !prev);
               }}
               src={
@@ -59,6 +60,7 @@ const Login = ({
               <span
                 className='manrope-semibold cursor-pointer text-blue-500'
                 onClick={() => {
+                  window.localStorage.setItem('login', JSON.stringify(false));
                   setLogin(false);
                 }}
               >

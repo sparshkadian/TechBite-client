@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const Signup = ({
   setLogin,
 }: {
-  setLogin: React.Dispatch<React.SetStateAction<boolean>>;
+  setLogin: React.Dispatch<React.SetStateAction<string | boolean>>;
 }) => {
   const [viewPassword, setViewPassword] = useState(false);
   return (
@@ -79,6 +79,7 @@ const Signup = ({
             <span
               className='manrope-semibold cursor-pointer text-blue-500'
               onClick={() => {
+                window.localStorage.setItem('login', JSON.stringify(true));
                 setLogin(true);
               }}
             >

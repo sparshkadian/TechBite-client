@@ -3,7 +3,9 @@ import Login from '../components/Login';
 import { useState } from 'react';
 
 const SignupOrLogin = () => {
-  const [login, setLogin] = useState(false);
+  const [login, setLogin] = useState(
+    JSON.parse(window.localStorage.getItem('login')!) || false
+  );
 
   return (
     <div className='h-screen grid grid-cols-1 sm:grid-cols-2'>
