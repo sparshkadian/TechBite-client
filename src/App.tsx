@@ -5,7 +5,7 @@ const App = () => {
   return (
     <>
       <Routes>
-        <Route path='/signup' element={<SignupOrLogin />} />
+        <Route path='/auth/:signOrLogin' element={<SignupOrLogin />} />
       </Routes>
     </>
   );

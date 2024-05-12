@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import Button from './Button';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const Signup = ({
   setLogin,
 }: {
   setLogin: React.Dispatch<React.SetStateAction<string | boolean>>;
 }) => {
+  const navigate = useNavigate();
   const [viewPassword, setViewPassword] = useState(false);
   return (
     <AnimatePresence>
@@ -79,6 +81,7 @@ const Signup = ({
             <span
               className='manrope-semibold cursor-pointer text-blue-500'
               onClick={() => {
+                navigate('/auth/login');
                 window.localStorage.setItem('login', JSON.stringify(true));
                 setLogin(true);
               }}
