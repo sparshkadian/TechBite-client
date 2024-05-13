@@ -10,7 +10,7 @@ const NavbarDrawer = ({
   setDrawerOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   // @ts-ignore
-  const [signedIn, setSignedIn] = useState(true);
+  const [signedIn, setSignedIn] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -29,14 +29,14 @@ const NavbarDrawer = ({
       <Drawer onClose={onClose} open={open} width={250}>
         <div className='text-[17.5px] flex flex-col gap-10 manrope-normal items-center'>
           <div>
-            <Link to='#' className='peer hover:text-black'>
+            <Link to='/about' className='peer hover:text-black'>
               About
             </Link>
             <p className='peer-hover:border-b peer-hover:border-blue-500'></p>
           </div>
 
           <div>
-            <Link to='#' className='peer hover:text-black'>
+            <Link to='/contact' className='peer hover:text-black'>
               Contact
             </Link>
             <p className='peer-hover:border-b peer-hover:border-blue-500'></p>

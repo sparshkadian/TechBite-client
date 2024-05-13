@@ -6,7 +6,7 @@ const Button = ({
   children: React.ReactNode;
 }) => {
   return (
-    <button type={type} className='signButton manrope-normal self-center'>
+    <button type={type} className='reusable-button manrope-normal self-center'>
       {children}
     </button>
   );

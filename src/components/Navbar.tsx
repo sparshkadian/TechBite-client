@@ -4,7 +4,7 @@ import NavbarDrawer from './NavbarDrawer';
 
 const Navbar = () => {
   // @ts-ignore
-  const [signedIn, setSignedIn] = useState(true);
+  const [signedIn, setSignedIn] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   return (
@@ -27,14 +27,14 @@ const Navbar = () => {
 
         <div className='text-[17.5px] hidden sm:flex gap-7 manrope-normal items-center'>
           <div>
-            <Link to='#' className='peer'>
+            <Link to='/about' className='peer'>
               About
             </Link>
             <p className='peer-hover:border-b peer-hover:border-blue-500'></p>
           </div>
 
           <div>
-            <Link to='#' className='peer'>
+            <Link to='/contact' className='peer'>
               Contact
             </Link>
             <p className='peer-hover:border-b peer-hover:border-blue-500'></p>
