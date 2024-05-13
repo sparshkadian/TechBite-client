@@ -19,7 +19,7 @@ const Signup = ({
         transition={{ duration: 0.5 }}
         className='p-5'
       >
-        <p className='mt-10 manrope-semibold text-4xl text-center tracking-tight'>
+        <p className='mt-[60px] manrope-semibold text-4xl text-center tracking-tight'>
           Sign Up
         </p>
         <form className='mt-10 flex flex-col gap-[50px]'>

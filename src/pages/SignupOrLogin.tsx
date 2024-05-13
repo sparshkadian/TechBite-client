@@ -1,6 +1,7 @@
 import Signup from '../components/Signup';
 import Login from '../components/Login';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const SignupOrLogin = () => {
   const [login, setLogin] = useState(
@@ -8,7 +9,14 @@ const SignupOrLogin = () => {
   );
 
   return (
-    <div className='h-screen grid grid-cols-1 sm:grid-cols-2'>
+    <div className='relative h-screen grid grid-cols-1 sm:grid-cols-2'>
+      <div className='absolute top-4 left-4 z-10'>
+        <Link to='/' className='flex items-center manrope-semibold text-3xl'>
+          <span>Tech</span>
+          <img src='../logo.png' alt='logo' width={20} className='pt-[6px] ' />
+          <span className='text-blue-600'>Bite</span>
+        </Link>
+      </div>
       {/* Image */}
       <div className='relative hidden sm:block'>
         <div className='w-full h-full bg-gradient-to-b from-[#4c008284] to-[#892be273]'></div>
