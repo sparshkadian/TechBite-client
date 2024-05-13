@@ -43,7 +43,7 @@ const Navbar = () => {
           {!signedIn && (
             <Link
               to='/auth/signup'
-              className='text-[16px] signup text-white px-4 py-3 rounded-xl'
+              className='text-[16px] signup text-white px-6 py-3 rounded-xl'
             >
               Signup
             </Link>

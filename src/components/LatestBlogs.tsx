@@ -14,7 +14,7 @@ const LatestBlogs = () => {
           evolving world of technology.
         </p>
       </div>
-      <div className='mt-10 px-10 flex flex-wrap gap-10 justify-center'>
+      <div className='p-10 flex flex-wrap gap-10 justify-center'>
         {blogs.map((blog) => (
           <CardContainer key={blog.id}>
             <CardBody className='relative group/card shadow-2xl dark:hover:shadow-2xl bg-white border border-black/[0.1] w-auto sm:w-[25rem] h-auto rounded-xl p-6 '>
