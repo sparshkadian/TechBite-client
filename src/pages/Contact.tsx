@@ -13,7 +13,7 @@ const Contact = () => {
       </div>
 
       <div className='max-w-4xl mx-auto px-5 mt-[100px]'>
-        <p className='text-center manrope-semibold text-4xl'>
+        <p className='text-center manrope-semibold text-2xl sm:text-4xl'>
           Drop Me a Line, Let Me Know What You Think
         </p>
 
