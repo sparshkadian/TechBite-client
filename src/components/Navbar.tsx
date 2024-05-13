@@ -8,10 +8,10 @@ const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   return (
-    <nav className='border-2 h-[80px] px-5 sm:px-10 shadow-md flex justify-between items-center'>
+    <nav className='relative border-2 h-[80px] px-5 sm:px-10 shadow-md flex justify-between items-center'>
       <Link to='/' className='flex items-center manrope-semibold text-3xl'>
         <span>Tech</span>
-        <img src='../logo.png' alt='logo' width={20} className='pt-[6px]' />
+        <img src='../logo.png' alt='logo' width={20} className='pt-[6px] ' />
         <span className='text-blue-600'>Bite</span>
       </Link>
 
@@ -19,7 +19,7 @@ const Navbar = () => {
         {signedIn && (
           <Link
             to='#'
-            className='ml-[130px] sm:mr-7 text-[17.5px] border-2 border-blue-500 rounded-md w-[130px] h-[50px] text-center px-2 py-2 hover:bg-blue-500 hover:text-[#fff] hover:border-blue-500 hover:shadow-md transition-all duration-300 ease-in-out'
+            className='mr-7 sm:mr-7 text-[17.5px] border-2 border-blue-500 rounded-md w-[130px] h-[50px] text-center px-2 py-2 hover:bg-blue-500 hover:text-[#fff] hover:border-blue-500 hover:shadow-md transition-all duration-300 ease-in-out'
           >
             Create Post
           </Link>
@@ -68,7 +68,7 @@ const Navbar = () => {
         src='../menu.png'
         alt='menubars'
         width={20}
-        className='sm:hidden cursor-pointer'
+        className='sm:hidden cursor-pointer absolute right-3'
       />
 
       <NavbarDrawer drawerOpen={drawerOpen} setDrawerOpen={setDrawerOpen} />
