@@ -17,7 +17,9 @@
   font-style: normal;
 }
 
-/* BUTTON COMPONENT */
+/* ******** COMPONENTS ********* */
+
+/* BUTTON */
 .signButton {
   --b: 3px;
   --s: 0.45em;
@@ -55,7 +57,7 @@
   color: #fff;
 }
 
-/* SINGUP COMPONENT*/
+/* SINGUP */
 .input-container label {
   position: absolute;
   pointer-events: none;
@@ -71,3 +73,14 @@
   transform: translate(0, -15px) scale(0.8);
   color: #0a53e4;
 }
+
+/* NAVBAR */
+.signup {
+  background: linear-gradient(to bottom right, rgb(59 130 246), #a855f7);
+}
+
+.signup:hover {
+  background: linear-gradient(to bottom right, #a855f7, rgb(59 130 246));
+}
+
+/* ******** PAGES ********* */
