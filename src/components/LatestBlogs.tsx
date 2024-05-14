@@ -1,12 +1,45 @@
 import { CardBody, CardContainer, CardItem } from './ui/3d-card';
 import { Link } from 'react-router-dom';
 import { blogs } from '../constants';
+import { useState } from 'react';
+import { blog } from '../types';
 
 const LatestBlogs = () => {
+  const [blogSelected, setBlogSelected] = useState<number[]>([]);
+  const [likes, setLikes] = useState<{
+    blogId: number | null;
+    likeCount: number | null;
+  } | null>({
+    blogId: null,
+    likeCount: null,
+  });
+  console.log(likes);
+
+  const handleBlogLike = (blog: blog) => {
+    if (blogSelected?.includes(blog.id)) {
+      setBlogSelected(
+        blogSelected.filter((blogId: number) => {
+          return blogId !== blog.id;
+        })
+      );
+      setLikes({
+        blogId: blog.id,
+        likeCount: blog.likes - 1,
+      });
+      return;
+    }
+
+    setLikes({
+      blogId: blog.id,
+      likeCount: blog.likes + 1,
+    });
+    setBlogSelected([...blogSelected, blog.id]);
+  };
+
   return (
     <>
       <div className='p-2 flex flex-col items-center gap-2 sm:gap-5 mt-10'>
-        <p className='text-2xl sm:text-6xl manrope-semibold'>
+        <p className='sm:py-[8px] gradient-text text-2xl sm:text-6xl manrope-semibold'>
           Latest From the Blog
         </p>
         <p className='text-center text-normal sm:text-2xl manrope-normal text-[#777]'>
@@ -46,19 +79,29 @@ const LatestBlogs = () => {
                 {blog.content}
               </CardItem>
               <div className='manrope-normal border-t-2 pt-2 flex justify-between items-center mt-4'>
-                <div className='flex items-center gap-3'>
+                <div
+                  onClick={() => {
+                    handleBlogLike(blog);
+                  }}
+                  className='flex items-center gap-3'
+                >
                   {/* Likes */}
                   <CardItem
                     translateZ={20}
                     className='cursor-pointer flex items-center gap-1 text-black text-sm'
                   >
                     <img
-                      src='../heart-empty.png'
+                      src={
+                        blogSelected?.includes(blog.id)
+                          ? '../heart-full.png'
+                          : '../heart-empty.png'
+                      }
                       alt='heart'
                       width={17}
-                      className=''
                     />
-                    {blog.likes}
+                    {blogSelected?.includes(blog.id)
+                      ? likes?.likeCount
+                      : blog.likes}
                   </CardItem>
 
                   {/* comments */}

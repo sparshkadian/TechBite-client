@@ -3,6 +3,6 @@ export interface blog {
   title: string;
   content: string;
   likes: number;
-  comment: number;
+  comments: number;
   banner: string;
 }

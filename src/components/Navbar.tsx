@@ -8,7 +8,7 @@ const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   return (
-    <nav className='relative border-2 h-[80px] px-5 sm:px-10 shadow-md flex justify-between items-center'>
+    <nav className='relative h-[80px] px-5 sm:px-10 shadow-md flex justify-between items-center'>
       <Link to='/' className='flex items-center manrope-semibold text-3xl'>
         <span>Tech</span>
         <img src='../logo.png' alt='logo' width={20} className='pt-[6px] ' />
