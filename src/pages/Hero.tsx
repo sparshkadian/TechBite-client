@@ -1,8 +1,10 @@
 import LatestBlogs from '../components/LatestBlogs';
+import HeroMain from '../components/HeroMain';
 
 const Hero = () => {
   return (
-    <div className='hero border-2'>
+    <div>
+      <HeroMain />
       <LatestBlogs />
     </div>
   );

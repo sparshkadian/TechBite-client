@@ -18,6 +18,15 @@
 
 /* ******** COMPONENTS ********* */
 
+/* HERO MAIN */
+.tagline {
+  background: -webkit-linear-gradient(to right, rgb(59 130 246), #a855f7);
+  background: linear-gradient(to right, rgb(59 130 246), #a855f7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 /* BUTTON */
 .reusable-button {
   --b: 3px;
