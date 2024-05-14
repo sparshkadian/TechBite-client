@@ -3,6 +3,7 @@ import Button from './Button';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import Oauth from './Oauth';
+import toast from 'react-hot-toast';
 
 const Login = ({
   setLogin,
@@ -28,6 +29,7 @@ const Login = ({
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // custom hook
+    toast('Working on it');
   };
 
   return (

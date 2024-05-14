@@ -4,6 +4,7 @@ import Hero from './pages/Hero';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import SignupOrLogin from './pages/SignupOrLogin';
+import { Toaster } from 'react-hot-toast';
 
 const App = () => {
   const location = useLocation();
@@ -16,6 +17,7 @@ const App = () => {
         <Route path='/contact' element={<Contact />} />
         <Route path='/auth/:signOrLogin' element={<SignupOrLogin />} />
       </Routes>
+      <Toaster />
     </>
   );
 };
