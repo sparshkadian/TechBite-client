@@ -106,8 +106,10 @@ const Login = ({
             </div>
             <Button type='submit'>Login</Button>
           </form>
-          <div className='border border-[#ccc] mt-10 relative'>
-            <p className='manrope-normal absolute left-[50%] -translate-x-1/2 -top-3 px-3 bg-white'>
+
+          {/* OR */}
+          <div className='border border-[#ddd] mt-10 relative'>
+            <p className='text-sm text-[#999] manrope-normal absolute left-[50%] -translate-x-1/2 -top-[10px] px-3 bg-white'>
               OR
             </p>
           </div>

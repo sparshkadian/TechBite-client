@@ -3,16 +3,19 @@ import Button from '../components/Button';
 
 const Contact = () => {
   return (
-    <div className=''>
-      <div className='absolute top-4 left-4'>
-        <Link to='/' className='flex items-center manrope-semibold text-3xl'>
+    <div>
+      <div className='absolute top-2 left-2 sm:top-4 sm:left-4'>
+        <Link
+          to='/'
+          className='flex items-center manrope-semibold text-xl sm:text-3xl'
+        >
           <span>Tech</span>
           <img src='../logo.png' alt='logo' width={20} className='pt-[6px] ' />
           <span className='text-blue-600'>Bite</span>
         </Link>
       </div>
 
-      <div className='max-w-4xl mx-auto px-5 mt-[100px]'>
+      <div className='max-w-4xl mx-auto px-5 mt-20 sm:mt-[100px]'>
         <p className='text-center manrope-semibold text-2xl sm:text-4xl'>
           Drop Me a Line, Let Me Know What You Think
         </p>

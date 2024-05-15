@@ -13,7 +13,6 @@ const LatestBlogs = () => {
     blogId: null,
     likeCount: null,
   });
-  console.log(likes);
 
   const handleBlogLike = (blog: blog) => {
     if (blogSelected?.includes(blog.id)) {
