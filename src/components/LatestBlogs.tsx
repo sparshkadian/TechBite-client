@@ -37,7 +37,7 @@ const LatestBlogs = () => {
 
   return (
     <>
-      <div className='p-2 flex flex-col items-center gap-2 sm:gap-5 mt-10'>
+      <div className='px-2 flex flex-col items-center gap-2 sm:gap-5'>
         <p className='sm:py-[8px] gradient-text text-2xl sm:text-6xl manrope-semibold'>
           Latest From the Blog
         </p>

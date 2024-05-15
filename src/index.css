@@ -82,6 +82,19 @@
   background: linear-gradient(to bottom right, #a855f7, rgb(59 130 246));
 }
 
+/* FOOTER */
+.footer {
+  background: linear-gradient(
+    to bottom right,
+    #a955f780,
+    rgba(59, 131, 246, 0.477)
+  );
+}
+
+.footer-socials {
+  background: linear-gradient(to bottom right, #a855f7, rgb(59 130 246));
+}
+
 /* ******** PAGES ********* */
 
 /* HERO */
