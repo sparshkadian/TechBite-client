@@ -7,12 +7,14 @@ import SignupOrLogin from './pages/SignupOrLogin';
 import CreateBlog from './pages/CreateBlog';
 import Protected from './components/Protected';
 import { Toaster } from 'react-hot-toast';
+import MoveToTop from './components/MoveToTop';
 
 const App = () => {
   const location = useLocation();
   return (
     <>
       {location.pathname === '/' && <Navbar />}
+      <MoveToTop />
       <Routes>
         <Route path='/' element={<Hero />} />
         <Route path='/about' element={<About />} />

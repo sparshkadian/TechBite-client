@@ -95,6 +95,21 @@
   background: linear-gradient(to bottom right, #a855f7, rgb(59 130 246));
 }
 
+/* MOVETOTOP */
+.moveToTop {
+  animation: bounce alternate-reverse infinite 500ms;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-7px);
+  }
+}
+
 /* ******** PAGES ********* */
 
 /* HERO */
