@@ -1,12 +1,12 @@
-import LatestBlogs from '../components/LatestBlogs';
 import HeroMain from '../components/HeroMain';
+import LatestBlogsList from '../components/latestblogs/LatestBlogsList';
 import Footer from '../components/Footer';
 
 const Hero = () => {
   return (
     <div>
       <HeroMain />
-      <LatestBlogs />
+      <LatestBlogsList />
       <Footer />
     </div>
   );
