@@ -51,13 +51,15 @@ const Navbar = () => {
           )}
 
           {userSignedIn && (
-            <img
-              src='../avatar.png'
-              alt='avatar'
-              className='cursor-pointer rounded-full cusor-pointer'
-              width={45}
-              height={45}
-            />
+            <Link to='/profile'>
+              <img
+                src='../avatar.png'
+                alt='avatar'
+                className='cursor-pointer rounded-full cusor-pointer'
+                width={45}
+                height={45}
+              />
+            </Link>
           )}
         </div>
       </div>

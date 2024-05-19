@@ -6,6 +6,8 @@ import Contact from './pages/Contact';
 import SignupOrLogin from './pages/SignupOrLogin';
 import CreateBlog from './pages/CreateBlog';
 import Protected from './components/Protected';
+import Profile from './pages/Profile';
+import Blog from './pages/Blog';
 import { Toaster } from 'react-hot-toast';
 import MoveToTop from './components/MoveToTop';
 
@@ -20,11 +22,21 @@ const App = () => {
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/auth/:signOrLogin' element={<SignupOrLogin />} />
+        <Route path='/:username/:blogTitle' element={<Blog />} />
         <Route
           path='/new'
           element={
             <Protected>
               <CreateBlog />
+            </Protected>
+          }
+        />
+        <Route
+          // Later path will be user's name
+          path='/profile'
+          element={
+            <Protected>
+              <Profile />
             </Protected>
           }
         />

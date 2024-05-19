@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -12,6 +13,12 @@
 
 .manrope-normal {
   font-family: 'Manrope', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.covered-by-your-grace-regular {
+  font-family: 'Covered By Your Grace', cursive;
   font-weight: 400;
   font-style: normal;
 }
@@ -119,4 +126,20 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+/* PROFILE */
+.Image-container {
+  background: linear-gradient(to right, #a955f7, rgb(59, 131, 246));
+}
+
+.bioContainer {
+  background: linear-gradient(to right, rgba(59, 131, 246, 0.397), #a955f761);
+}
+
+.bioContainer.title {
+  background: -webkit-linear-gradient(to right, #a955f7, rgb(59, 131, 246));
+  background: linear-gradient(to right, #a955f7, rgb(59, 131, 246));
+  -webkit-background-clip: text;
+  background-clip: text;
 }

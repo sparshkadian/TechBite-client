@@ -10,7 +10,6 @@ const NavbarDrawer = ({
   drawerOpen: boolean;
   setDrawerOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  // @ts-ignore
   const [open, setOpen] = useState(false);
   const { userSignedIn } = useContext(UserContext);
 
@@ -53,13 +52,15 @@ const NavbarDrawer = ({
           )}
 
           {userSignedIn && (
-            <img
-              src='../avatar.png'
-              alt='avatar'
-              className='cursor-pointer rounded-full cusor-pointer'
-              width={100}
-              height={100}
-            />
+            <Link to='/profile'>
+              <img
+                src='../avatar.png'
+                alt='avatar'
+                className='cursor-pointer rounded-full cusor-pointer'
+                width={100}
+                height={100}
+              />
+            </Link>
           )}
         </div>
       </Drawer>
