@@ -1,5 +1,6 @@
 import { blog } from '../types';
 import { userBlog } from '../types';
+import { user } from '../types';
 
 export const blogs: blog[] = [
   {
@@ -114,3 +115,13 @@ export const userBlogs: userBlog[] = [
     comments: 63,
   },
 ];
+
+export const dummyUser: user = {
+  id: 1,
+  name: 'sparsh kadian',
+  email: 'sparshkadian323@gmail.com',
+  website: null,
+  instagram: null,
+  github: null,
+  twitter: null,
+};
