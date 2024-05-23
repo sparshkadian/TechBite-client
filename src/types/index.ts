@@ -19,8 +19,11 @@ export interface user {
   id: number;
   name: string;
   email: string;
-  website: string | null;
-  instagram: string | null;
-  github: string | null;
-  twitter: string | null;
+}
+
+export interface userSocials {
+  id: number;
+  type: string;
+  link: string | null;
+  image: string;
 }

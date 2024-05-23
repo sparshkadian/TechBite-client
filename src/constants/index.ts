@@ -1,6 +1,7 @@
 import { blog } from '../types';
 import { userBlog } from '../types';
 import { user } from '../types';
+import { userSocials } from '../types';
 
 export const blogs: blog[] = [
   {
@@ -120,8 +121,11 @@ export const dummyUser: user = {
   id: 1,
   name: 'sparsh kadian',
   email: 'sparshkadian323@gmail.com',
-  website: null,
-  instagram: null,
-  github: null,
-  twitter: null,
 };
+
+export const dummySocials: userSocials[] = [
+  { id: 1, type: 'website', link: null, image: '../website.png' },
+  { id: 2, type: 'github', link: null, image: '../github.png' },
+  { id: 3, type: 'instagram', link: null, image: '../instagram.png' },
+  { id: 4, type: 'twitter', link: null, image: '../twitter.png' },
+];

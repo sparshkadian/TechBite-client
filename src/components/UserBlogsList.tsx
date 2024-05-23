@@ -8,7 +8,10 @@ const UserBlogsList = () => {
   return (
     <div className='mt-5 py-10 overflow-y-scroll h-[300px] grid grid-cols-1 sm:grid-cols-2 gap-5'>
       {userBlogs.map((blog: userBlog) => (
-        <div className='manrope-semibold p-2 flex flex-col rounded-md gap-2 shadow-md'>
+        <div
+          key={blog.id}
+          className='manrope-semibold p-2 flex flex-col rounded-md gap-2 shadow-md'
+        >
           <p className='text-xl'>{blog.title}</p>
           <p className='manrope-normal h-[150px] overflow-hidden'>
             {blog.content}

@@ -143,3 +143,11 @@
   -webkit-background-clip: text;
   background-clip: text;
 }
+
+.socialsUpdate-modal {
+  background: linear-gradient(to right, #a955f7, rgb(59, 131, 246));
+}
+
+.socialsUpdate-modalButton {
+  background: linear-gradient(to right, rgb(59, 131, 246), #a955f7);
+}
