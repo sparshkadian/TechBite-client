@@ -8,8 +8,9 @@ import CreateBlog from './pages/CreateBlog';
 import Protected from './components/Protected';
 import Profile from './pages/Profile';
 import Blog from './pages/Blog';
-import { Toaster } from 'react-hot-toast';
 import MoveToTop from './components/MoveToTop';
+import PageNotFound from './pages/PageNotFound';
+import { Toaster } from 'react-hot-toast';
 
 const App = () => {
   const location = useLocation();
@@ -40,6 +41,7 @@ const App = () => {
             </Protected>
           }
         />
+        <Route path='/*' element={<PageNotFound />} />
       </Routes>
       <Toaster />
     </>
