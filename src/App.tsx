@@ -15,7 +15,7 @@ const App = () => {
   const location = useLocation();
   return (
     <>
-      {location.pathname === '/' && <Navbar />}
+      {location.pathname === '/' && <Navbar show={true} />}
       <MoveToTop />
       <Routes>
         <Route path='/' element={<Hero />} />

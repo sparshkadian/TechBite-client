@@ -1,11 +1,19 @@
 import { CardBody, CardContainer, CardItem } from '../ui/3d-card';
 import { blog } from '../../types';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { dummyUser } from '../../constants';
 
 const LatestBlogItem = ({ blog }: { blog: blog }) => {
   const [blogSelected, setBlogSelected] = useState<number | null>(null);
   const [likes, setLikes] = useState<number | null>(blog.likes);
+
+  useEffect(() => {
+    // function modifyBlogTitles(blog: blog) {
+    //   blog.title = blog.title.split(' ').join('-');
+    // }
+    // modifyBlogTitles(blog);
+  }, []);
 
   const handleBlogLike = (blogId: number, blogLikes: number) => {
     // Dislike
@@ -87,15 +95,24 @@ const LatestBlogItem = ({ blog }: { blog: blog }) => {
             </div>
 
             {/* Link To blog */}
-            <CardItem
-              translateZ={20}
-              as={Link}
-              href='https://twitter.com/mannupaaji'
-              target='__blank'
-              className='hover:text-blue-600'
+            <Link
+              to={`${dummyUser.username}/${blog.title}`}
+              state={{
+                banner: blog.banner,
+                content: blog.content,
+                likes: blog.likes,
+                comments: blog.comments,
+              }}
             >
-              View
-            </CardItem>
+              <CardItem
+                translateZ={20}
+                as={Link}
+                target='__blank'
+                className='text-blue-500'
+              >
+                View
+              </CardItem>
+            </Link>
           </div>
         </CardBody>
       </CardContainer>

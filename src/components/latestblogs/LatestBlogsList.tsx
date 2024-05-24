@@ -15,7 +15,7 @@ const LatestBlogsList = () => {
       </div>
       <div className='p-10 flex flex-wrap gap-10 justify-center'>
         {blogs.map((blog) => (
-          <LatestBlogItem blog={blog} />
+          <LatestBlogItem key={blog.id} blog={blog} />
         ))}
       </div>
     </>

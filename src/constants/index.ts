@@ -120,6 +120,7 @@ export const userBlogs: userBlog[] = [
 export const dummyUser: user = {
   id: 1,
   name: 'sparsh kadian',
+  username: 'sparshkadian',
   email: 'sparshkadian323@gmail.com',
 };
 

@@ -3,7 +3,7 @@ import { useState, useContext } from 'react';
 import { UserContext } from '../context/UserContext';
 import NavbarDrawer from './NavbarDrawer';
 
-const Navbar = () => {
+const Navbar = ({ show }: { show: boolean }) => {
   // @ts-ignore
   const [drawerOpen, setDrawerOpen] = useState(false);
   const { userSignedIn } = useContext(UserContext);
@@ -17,6 +17,7 @@ const Navbar = () => {
       </Link>
 
       <div className='flex items-center'>
+        {/* Create Post */}
         {userSignedIn && (
           <Link
             to='/new'
@@ -26,21 +27,24 @@ const Navbar = () => {
           </Link>
         )}
 
+        {/* About */}
         <div className='text-[17.5px] hidden sm:flex gap-7 manrope-normal items-center'>
-          <div>
+          <div className={`${show ? 'block' : 'hidden'}`}>
             <Link to='/about' className='peer'>
               About
             </Link>
             <p className='peer-hover:border-b peer-hover:border-blue-500'></p>
           </div>
 
-          <div>
+          {/* Contact */}
+          <div className={`${show ? 'block' : 'hidden'}`}>
             <Link to='/contact' className='peer'>
               Contact
             </Link>
             <p className='peer-hover:border-b peer-hover:border-blue-500'></p>
           </div>
 
+          {/* Signup */}
           {!userSignedIn && (
             <Link
               to='/auth/signup'
@@ -50,6 +54,7 @@ const Navbar = () => {
             </Link>
           )}
 
+          {/* Avatar */}
           {userSignedIn && (
             <Link to='/profile'>
               <img
@@ -64,6 +69,7 @@ const Navbar = () => {
         </div>
       </div>
 
+      {/* Menu Bars */}
       <img
         onClick={() => {
           setDrawerOpen(true);

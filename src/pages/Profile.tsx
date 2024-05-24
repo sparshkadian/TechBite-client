@@ -19,17 +19,17 @@ const Profile = () => {
 
   const { website, github, instagram, twitter } = socials;
 
-  const checkSocial = (socailType: string) => {
-    if (socailType === 'website') {
-      return website;
-    } else if (socailType === 'github') {
-      return github;
-    } else if (socailType === 'instagram') {
-      return instagram;
-    } else {
-      return twitter;
-    }
-  };
+  // const checkSocial = (socailType: string) => {
+  //   if (socailType === 'website') {
+  //     return website;
+  //   } else if (socailType === 'github') {
+  //     return github;
+  //   } else if (socailType === 'instagram') {
+  //     return instagram;
+  //   } else {
+  //     return twitter;
+  //   }
+  // };
 
   const handleSocialsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { socialType } = socialUpdate;
@@ -98,7 +98,7 @@ const Profile = () => {
 
                 {/* username */}
                 <p className='manrope-normal text-2xl tracking-tight text-[#888]'>
-                  @{dummyUser.name}
+                  @{dummyUser.username}
                 </p>
               </div>
             </div>

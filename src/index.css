@@ -5,6 +5,12 @@
 @tailwind utilities;
 
 /* FONTS */
+.manrope-bold {
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
 .manrope-semibold {
   font-family: 'Manrope', sans-serif;
   font-weight: 600;
@@ -149,5 +155,10 @@
 }
 
 .socialsUpdate-modalButton {
+  background: linear-gradient(to right, rgb(59, 131, 246), #a955f7);
+}
+
+/* BLOG */
+.blog-userAvatar {
   background: linear-gradient(to right, rgb(59, 131, 246), #a955f7);
 }
