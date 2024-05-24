@@ -1,10 +1,10 @@
 import { CardBody, CardContainer, CardItem } from '../ui/3d-card';
-import { blog } from '../../types';
+import { latestBlogsType } from '../../types';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { dummyUser } from '../../constants';
 
-const LatestBlogItem = ({ blog }: { blog: blog }) => {
+const LatestBlogItem = ({ blog }: { blog: latestBlogsType }) => {
   const [blogSelected, setBlogSelected] = useState<number | null>(null);
   const [likes, setLikes] = useState<number | null>(blog.likes);
 

@@ -1,4 +1,4 @@
-import { blogs } from '../../constants';
+import { latestBlogs } from '../../constants';
 import LatestBlogItem from './LatestBlogItem';
 
 const LatestBlogsList = () => {
@@ -14,7 +14,7 @@ const LatestBlogsList = () => {
         </p>
       </div>
       <div className='p-10 flex flex-wrap gap-10 justify-center'>
-        {blogs.map((blog) => (
+        {latestBlogs.map((blog) => (
           <LatestBlogItem key={blog.id} blog={blog} />
         ))}
       </div>

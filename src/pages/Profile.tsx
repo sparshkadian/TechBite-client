@@ -1,6 +1,6 @@
 import UserBlogsList from '../components/UserBlogsList';
 import { Link } from 'react-router-dom';
-import { dummyUser } from '../constants';
+import { dummyUser, userBlogs } from '../constants';
 import { dummySocials } from '../constants';
 import { useState } from 'react';
 
@@ -133,15 +133,18 @@ const Profile = () => {
                       ) : (
                         <img
                           onClick={() => {
-                            setSocialUpdate({
-                              socialType: social.type,
-                              socialId: social.id,
-                            });
-                            setShowModal(true);
+                            if (!showModal) {
+                              setSocialUpdate({
+                                socialType: social.type,
+                                socialId: social.id,
+                              });
+                              setShowModal(true);
+                            }
                           }}
                           src='../edit.png'
                           alt='edit'
                           width={20}
+                          style={{ cursor: showModal ? 'none' : '' }}
                           className='cursor-pointer'
                         />
                       )}
@@ -182,7 +185,7 @@ const Profile = () => {
               <p className='covered-by-your-grace-regular text-center text-6xl'>
                 Your Blogs
               </p>
-              <UserBlogsList />
+              <UserBlogsList blogs={userBlogs} />
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-export interface blog {
+export interface latestBlogsType {
   id: number;
   title: string;
   content: string;
@@ -7,8 +7,9 @@ export interface blog {
   banner: string;
 }
 
-export interface userBlog {
+export interface userBlogType {
   id: number;
+  banner: string;
   title: string;
   content: string;
   likes: number;

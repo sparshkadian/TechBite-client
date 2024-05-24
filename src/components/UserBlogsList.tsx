@@ -1,13 +1,11 @@
-import { userBlogs } from '../constants';
-import { userBlog } from '../types';
+import { userBlogType } from '../types';
 import { Link } from 'react-router-dom';
+import { dummyUser } from '../constants';
 
-const UserBlogsList = () => {
-  const username = 'crazyWolf69';
-
+const UserBlogsList = ({ blogs }: { blogs: userBlogType[] }) => {
   return (
     <div className='mt-5 py-10 overflow-y-scroll h-[300px] grid grid-cols-1 sm:grid-cols-2 gap-5'>
-      {userBlogs.map((blog: userBlog) => (
+      {blogs.map((blog) => (
         <div
           key={blog.id}
           className='manrope-semibold p-2 flex flex-col rounded-md gap-2 shadow-md'
@@ -28,7 +26,13 @@ const UserBlogsList = () => {
               </div>
             </div>
             <Link
-              to={`/${username}/${blog.title}`}
+              to={`/${dummyUser.username}/${blog.title}`}
+              state={{
+                banner: blog.banner,
+                content: blog.content,
+                likes: blog.likes,
+                comments: blog.comments,
+              }}
               className='mr-5 text-blue-600 manrope-semibold'
             >
               View
