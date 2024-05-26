@@ -3,13 +3,14 @@ import Button from './Button';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import Oauth from './Oauth';
-import toast from 'react-hot-toast';
+import { useSignupOrLogin } from '../hooks/useSignupOrLogin';
 
 const Login = ({
   setLogin,
 }: {
   setLogin: React.Dispatch<React.SetStateAction<string | boolean>>;
 }) => {
+  const { useLogin } = useSignupOrLogin();
   const navigate = useNavigate();
   const [viewPassword, setViewPassword] = useState(false);
   const [formData, setFormData] = useState({
@@ -28,8 +29,8 @@ const Login = ({
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // custom hook
-    toast('Working on it');
+    useLogin(formData);
+    setFormData({ email: '', password: '' });
   };
 
   return (

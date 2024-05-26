@@ -13,7 +13,7 @@ const initialState: UserContextType = {
 export const UserContext = createContext(initialState);
 
 export const UserProvider = ({ children }: { children: React.ReactNode }) => {
-  const [userSignedIn, setUserSignedIn] = useState(true);
+  const [userSignedIn, setUserSignedIn] = useState(false);
 
   return (
     <UserContext.Provider value={{ userSignedIn, setUserSignedIn }}>

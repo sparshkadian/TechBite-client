@@ -3,23 +3,23 @@ import Button from './Button';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import Oauth from './Oauth';
-import toast from 'react-hot-toast';
+import { useSignupOrLogin } from '../hooks/useSignupOrLogin';
 
 const Signup = ({
   setLogin,
 }: {
   setLogin: React.Dispatch<React.SetStateAction<string | boolean>>;
 }) => {
+  const { useSignup } = useSignupOrLogin();
   const navigate = useNavigate();
   const [viewPassword, setViewPassword] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: '',
-    confirmPassword: '',
   });
 
-  const { name, email, password, confirmPassword } = formData;
+  const { name, email, password } = formData;
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData((prevValue) => ({
@@ -30,8 +30,8 @@ const Signup = ({
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // custom hook
-    toast('Working on it');
+    useSignup(formData);
+    setFormData({ name: '', email: '', password: '' });
   };
 
   return (
@@ -78,25 +78,13 @@ const Signup = ({
               />
             </div>
 
-            {/* Password */}
-            <div className='input-container manrope-normal flex flex-col gap-2'>
-              <label htmlFor='username'>Password</label>
-              <input
-                type='password'
-                id='password'
-                value={password}
-                onChange={handleInputChange}
-                className='border-b-2 pb-2 focus:outline-none'
-              />
-            </div>
-
             {/* confirmPassword */}
             <div className='input-container manrope-normal flex flex-col gap-2 relative'>
-              <label htmlFor='username'>Confirm Password</label>
+              <label htmlFor='username'>Password</label>
               <input
                 type={viewPassword ? 'text' : 'password'}
-                id='confirmPassword'
-                value={confirmPassword}
+                id='password'
+                value={password}
                 onChange={handleInputChange}
                 className='border-b-2 pb-2 focus:outline-none'
               />

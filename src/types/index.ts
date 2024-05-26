@@ -16,11 +16,12 @@ export interface userBlogType {
   comments: number;
 }
 
-export interface user {
+export interface userType {
   id: number;
   name: string;
   username: string;
   email: string;
+  avatar: string;
 }
 
 export interface userSocials {
@@ -28,4 +29,15 @@ export interface userSocials {
   type: string;
   link: string | null;
   image: string;
+}
+
+export interface signupFormDataType {
+  name: string;
+  email: string;
+  password: string;
+}
+
+export interface loginFormDataType {
+  email: string;
+  password: string;
 }
