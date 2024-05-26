@@ -28,7 +28,7 @@ const Blog = () => {
             className='rounded-full blog-userAvatar p-1'
           />
           <div>
-            <p className='manrope-semibold'>@{currentUser.username}</p>
+            <p className='manrope-semibold'>{currentUser.userName}</p>
             <p className='text-sm ml-2 text-[#666]'>Date of publish</p>
           </div>
         </div>

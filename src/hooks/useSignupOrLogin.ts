@@ -25,6 +25,7 @@ export const useSignupOrLogin = () => {
       });
       const data = await res.json();
       dispatch(signUpSuccess(data.user));
+      toast.success('Signup successfull');
       if (data.status != 'success') {
         dispatch(signUpFailure());
         throw new Error(data.message);
@@ -47,6 +48,7 @@ export const useSignupOrLogin = () => {
       });
       const data = await res.json();
       dispatch(loginSuccess(data.user));
+      toast.success('Login successfull');
       if (data.status != 'success') {
         dispatch(loginFailure());
         throw new Error(data.message);

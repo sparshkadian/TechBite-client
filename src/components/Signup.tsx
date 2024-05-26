@@ -32,6 +32,9 @@ const Signup = ({
     e.preventDefault();
     useSignup(formData);
     setFormData({ name: '', email: '', password: '' });
+    setTimeout(() => {
+      navigate('/');
+    }, 500);
   };
 
   return (

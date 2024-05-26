@@ -31,6 +31,9 @@ const Login = ({
     e.preventDefault();
     useLogin(formData);
     setFormData({ email: '', password: '' });
+    setTimeout(() => {
+      navigate('/');
+    }, 500);
   };
 
   return (

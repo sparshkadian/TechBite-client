@@ -79,8 +79,7 @@ export const userBlogs: userBlogType[] = [
   {
     id: 2,
     banner: '',
-    title:
-      'Blockchain technology, initially popularized by cryptocurrencies like Bitcoin, has far-reaching implications beyond finance. Its decentralized and secure nature makes it suitable for applications in supply chain management, voting systems, and digital identity verification.',
+    title: 'The Future of Blockchain Technology',
     content:
       'Blockchain technology, initially popularized by cryptocurrencies like Bitcoin, has far-reaching implications beyond finance. Its decentralized and secure nature makes it suitable for applications in supply chain management, voting systems, and digital identity verification.',
     likes: 287,
