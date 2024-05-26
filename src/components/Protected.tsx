@@ -1,11 +1,10 @@
-import { useContext } from 'react';
-import { UserContext } from '../context/UserContext';
 import { Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Protected = ({ children }: { children: React.ReactNode }) => {
-  const { userSignedIn } = useContext(UserContext);
+  const { currentUser } = useSelector((state: any) => state.user);
 
-  return userSignedIn ? children : <Navigate to='/auth/signup' />;
+  return currentUser ? children : <Navigate to='/auth/signup' />;
 };
 
 export default Protected;

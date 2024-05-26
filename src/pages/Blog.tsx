@@ -1,9 +1,10 @@
 import { useParams, useLocation } from 'react-router-dom';
-import { dummyUser } from '../constants';
 import { useEffect } from 'react';
 import Navbar from '../components/Navbar';
+import { useSelector } from 'react-redux';
 
 const Blog = () => {
+  const { currentUser } = useSelector((state: any) => state.user);
   const { blogTitle } = useParams();
   const { state, pathname } = useLocation();
 
@@ -27,7 +28,7 @@ const Blog = () => {
             className='rounded-full blog-userAvatar p-1'
           />
           <div>
-            <p className='manrope-semibold'>@{dummyUser.username}</p>
+            <p className='manrope-semibold'>@{currentUser.username}</p>
             <p className='text-sm ml-2 text-[#666]'>Date of publish</p>
           </div>
         </div>

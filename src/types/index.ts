@@ -19,7 +19,7 @@ export interface userBlogType {
 export interface userType {
   id: number;
   name: string;
-  username: string;
+  userName: string;
   email: string;
   avatar: string;
 }

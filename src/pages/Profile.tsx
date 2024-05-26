@@ -1,10 +1,12 @@
 import UserBlogsList from '../components/UserBlogsList';
 import { Link } from 'react-router-dom';
-import { dummyUser, userBlogs } from '../constants';
-import { dummySocials } from '../constants';
+import { userBlogs, dummySocials } from '../constants';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from '../redux/store';
 
 const Profile = () => {
+  const currentUser = useSelector((state: RootState) => state.user.currentUser);
   const [socials, setSocials] = useState({
     website: dummySocials[0].link,
     github: dummySocials[1].link,
@@ -93,12 +95,12 @@ const Profile = () => {
               <div className='flex flex-col items-center text-center'>
                 {/* registered name */}
                 <p className='manrope-semibold text-3xl tracking-tight'>
-                  {dummyUser.name}
+                  {currentUser.name}
                 </p>
 
                 {/* username */}
                 <p className='manrope-normal text-2xl tracking-tight text-[#888]'>
-                  @{dummyUser.username}
+                  {currentUser.userName}
                 </p>
               </div>
             </div>

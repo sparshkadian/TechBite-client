@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Drawer } from 'antd';
 import { Link } from 'react-router-dom';
-import { UserContext } from '../context/UserContext';
+import { useSelector } from 'react-redux';
 
 const NavbarDrawer = ({
   drawerOpen,
@@ -10,8 +10,8 @@ const NavbarDrawer = ({
   drawerOpen: boolean;
   setDrawerOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
+  const { currentUser } = useSelector((state: any) => state.user);
   const [open, setOpen] = useState(false);
-  const { userSignedIn } = useContext(UserContext);
 
   useEffect(() => {
     if (drawerOpen) {
@@ -42,7 +42,7 @@ const NavbarDrawer = ({
             <p className='peer-hover:border-b peer-hover:border-blue-500'></p>
           </div>
 
-          {!userSignedIn && (
+          {!currentUser && (
             <Link
               to='/auth/signup'
               className='text-[16px] signup text-white w-[100px] text-center py-3 rounded-xl hover:text-white'
@@ -51,7 +51,7 @@ const NavbarDrawer = ({
             </Link>
           )}
 
-          {userSignedIn && (
+          {currentUser && (
             <Link to='/profile'>
               <img
                 src='../avatar.png'

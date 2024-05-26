@@ -2,9 +2,10 @@ import { CardBody, CardContainer, CardItem } from '../ui/3d-card';
 import { latestBlogsType } from '../../types';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { dummyUser } from '../../constants';
+import { useSelector } from 'react-redux';
 
 const LatestBlogItem = ({ blog }: { blog: latestBlogsType }) => {
+  const { currentUser } = useSelector((state: any) => state.user);
   const [blogSelected, setBlogSelected] = useState<number | null>(null);
   const [likes, setLikes] = useState<number | null>(blog.likes);
 
@@ -96,7 +97,7 @@ const LatestBlogItem = ({ blog }: { blog: latestBlogsType }) => {
 
             {/* Link To blog */}
             <Link
-              to={`${dummyUser.username}/${blog.title}`}
+              to={`${currentUser.username}/${blog.title}`}
               state={{
                 banner: blog.banner,
                 content: blog.content,

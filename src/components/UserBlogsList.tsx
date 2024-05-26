@@ -1,8 +1,9 @@
 import { userBlogType } from '../types';
 import { Link } from 'react-router-dom';
-import { dummyUser } from '../constants';
+import { useSelector } from 'react-redux';
 
 const UserBlogsList = ({ blogs }: { blogs: userBlogType[] }) => {
+  const { currentUser } = useSelector((state: any) => state.user);
   return (
     <div className='mt-5 py-10 overflow-y-scroll h-[300px] grid grid-cols-1 sm:grid-cols-2 gap-5'>
       {blogs.map((blog) => (
@@ -26,7 +27,7 @@ const UserBlogsList = ({ blogs }: { blogs: userBlogType[] }) => {
               </div>
             </div>
             <Link
-              to={`/${dummyUser.username}/${blog.title}`}
+              to={`/${currentUser.username}/${blog.title}`}
               state={{
                 banner: blog.banner,
                 content: blog.content,

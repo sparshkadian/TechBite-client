@@ -1,6 +1,5 @@
 import { latestBlogsType } from '../types';
 import { userBlogType } from '../types';
-import { userType } from '../types';
 import { userSocials } from '../types';
 
 export const latestBlogs: latestBlogsType[] = [
@@ -128,14 +127,6 @@ export const userBlogs: userBlogType[] = [
     comments: 63,
   },
 ];
-
-export const dummyUser: userType = {
-  id: 1,
-  name: 'sparsh kadian',
-  username: 'sparshkadian',
-  email: 'sparshkadian323@gmail.com',
-  avatar: '',
-};
 
 export const dummySocials: userSocials[] = [
   { id: 1, type: 'website', link: null, image: '../website.png' },

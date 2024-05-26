@@ -1,12 +1,11 @@
 import { Link } from 'react-router-dom';
-import { useState, useContext } from 'react';
-import { UserContext } from '../context/UserContext';
+import { useState } from 'react';
 import NavbarDrawer from './NavbarDrawer';
+import { useSelector } from 'react-redux';
 
 const Navbar = ({ show }: { show: boolean }) => {
-  // @ts-ignore
+  const { currentUser } = useSelector((state: any) => state.user);
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const { userSignedIn } = useContext(UserContext);
 
   return (
     <nav className='relative h-[80px] px-5 sm:px-10 shadow-md flex justify-between items-center'>
@@ -18,7 +17,7 @@ const Navbar = ({ show }: { show: boolean }) => {
 
       <div className='flex items-center'>
         {/* Create Post */}
-        {userSignedIn && (
+        {currentUser && (
           <Link
             to='/new'
             className='mr-7 sm:mr-7 text-[17.5px] border-2 border-blue-500 rounded-md w-[130px] h-[50px] text-center px-2 py-2 hover:bg-blue-500 hover:text-[#fff] hover:border-blue-500 hover:shadow-md transition-all duration-300 ease-in-out'
@@ -45,7 +44,7 @@ const Navbar = ({ show }: { show: boolean }) => {
           </div>
 
           {/* Signup */}
-          {!userSignedIn && (
+          {!currentUser && (
             <Link
               to='/auth/signup'
               className='text-[16px] signup text-white px-6 py-3 rounded-xl'
@@ -55,7 +54,7 @@ const Navbar = ({ show }: { show: boolean }) => {
           )}
 
           {/* Avatar */}
-          {userSignedIn && (
+          {currentUser && (
             <Link to='/profile'>
               <img
                 src='../avatar.png'
