@@ -27,7 +27,7 @@ const UserBlogsList = ({ blogs }: { blogs: userBlogType[] }) => {
               </div>
             </div>
             <Link
-              to={`/${currentUser.username}/${blog.title}`}
+              to={`/${currentUser.userName}/${blog.title}`}
               state={{
                 banner: blog.banner,
                 content: blog.content,

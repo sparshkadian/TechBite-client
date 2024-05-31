@@ -97,7 +97,7 @@ const LatestBlogItem = ({ blog }: { blog: latestBlogsType }) => {
 
             {/* Link To blog */}
             <Link
-              to={`${currentUser?.username}/${blog.title}`}
+              to={`${currentUser.userName}/${blog.title}`}
               state={{
                 banner: blog.banner,
                 content: blog.content,

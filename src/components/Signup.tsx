@@ -34,7 +34,7 @@ const Signup = ({
     setFormData({ name: '', email: '', password: '' });
     setTimeout(() => {
       navigate('/');
-    }, 500);
+    }, 1000);
   };
 
   return (

@@ -33,7 +33,7 @@ const Login = ({
     setFormData({ email: '', password: '' });
     setTimeout(() => {
       navigate('/');
-    }, 500);
+    }, 1000);
   };
 
   return (
