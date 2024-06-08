@@ -22,13 +22,13 @@ export interface userType {
   userName: string;
   email: string;
   avatar: string;
-}
-
-export interface userSocials {
-  id: number;
-  type: string;
-  link: string | null;
-  image: string;
+  Country: string;
+  Occupation: string;
+  Skills: [string];
+  github: string;
+  website: string;
+  instagram: string;
+  twitter: string;
 }
 
 export interface signupFormDataType {

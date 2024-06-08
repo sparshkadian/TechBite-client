@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 const UserBlogsList = ({ blogs }: { blogs: userBlogType[] }) => {
   const { currentUser } = useSelector((state: any) => state.user);
   return (
-    <div className='mt-5 py-10 overflow-y-scroll h-[300px] grid grid-cols-1 sm:grid-cols-2 gap-5'>
+    <div className='mt-5 py-10 overflow-y-scroll h-[500px] grid grid-cols-1 sm:grid-cols-2 gap-5'>
       {blogs.map((blog) => (
         <div
           key={blog.id}

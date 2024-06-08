@@ -95,6 +95,19 @@
   background: linear-gradient(to bottom right, #a855f7, rgb(59 130 246));
 }
 
+.profileOption {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.profileOption:hover {
+  background-color: #dddddd7e;
+}
+
 /* FOOTER */
 .footer {
   background: linear-gradient(

@@ -1,6 +1,5 @@
 import { latestBlogsType } from '../types';
 import { userBlogType } from '../types';
-import { userSocials } from '../types';
 
 export const latestBlogs: latestBlogsType[] = [
   {
@@ -78,12 +77,13 @@ export const userBlogs: userBlogType[] = [
   },
   {
     id: 2,
-    banner: '',
     title: 'The Future of Blockchain Technology',
     content:
       'Blockchain technology, initially popularized by cryptocurrencies like Bitcoin, has far-reaching implications beyond finance. Its decentralized and secure nature makes it suitable for applications in supply chain management, voting systems, and digital identity verification.',
     likes: 287,
     comments: 42,
+    banner:
+      'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8YmxvY2tjaGFpbnxlbnwwfHwwfHx8MA%3D%3D',
   },
   {
     id: 3,
@@ -125,11 +125,4 @@ export const userBlogs: userBlogType[] = [
     likes: 412,
     comments: 63,
   },
-];
-
-export const dummySocials: userSocials[] = [
-  { id: 1, type: 'website', link: null, image: '../website.png' },
-  { id: 2, type: 'github', link: null, image: '../github.png' },
-  { id: 3, type: 'instagram', link: null, image: '../instagram.png' },
-  { id: 4, type: 'twitter', link: null, image: '../twitter.png' },
 ];

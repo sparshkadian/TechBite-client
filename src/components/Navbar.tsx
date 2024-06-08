@@ -2,10 +2,15 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import NavbarDrawer from './NavbarDrawer';
 import { useSelector } from 'react-redux';
+import { RootState } from '../redux/store';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useProfileActions } from '../hooks/useProfileActions';
 
 const Navbar = ({ show }: { show: boolean }) => {
-  const { currentUser } = useSelector((state: any) => state.user);
-  const [drawerOpen, setDrawerOpen] = useState(false);
+  const currentUser = useSelector((state: RootState) => state.user.currentUser);
+  const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
+  const [openProfileOption, setOpenProfileOptions] = useState<boolean>(false);
+  const { useLogout } = useProfileActions();
 
   return (
     <nav className='relative h-[80px] px-5 sm:px-10 shadow-md flex justify-between items-center'>
@@ -55,7 +60,12 @@ const Navbar = ({ show }: { show: boolean }) => {
 
           {/* Avatar */}
           {currentUser && (
-            <Link to='/profile'>
+            <div
+              className='relative'
+              onClick={() => {
+                setOpenProfileOptions((prevValue) => !prevValue);
+              }}
+            >
               <img
                 src='../avatar.png'
                 alt='avatar'
@@ -63,7 +73,40 @@ const Navbar = ({ show }: { show: boolean }) => {
                 width={45}
                 height={45}
               />
-            </Link>
+
+              {openProfileOption && (
+                <AnimatePresence>
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: '180px' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className='z-[10] absolute bg-white border-2 h-[180px] p-2 w-[200px] right-3 top-[50px] rounded-md shadow-md flex flex-col items-center gap-3'
+                  >
+                    {/* Profile */}
+                    <Link to='/profile' className='profileOption'>
+                      <img src='../user.png' alt='user' width={20} />
+                      <span>Profile</span>
+                    </Link>
+
+                    {/* Settings */}
+                    <Link to='#' className='profileOption'>
+                      <img src='../settings.png' alt='user' width={20} />
+                      <span>Settings</span>
+                    </Link>
+
+                    {/* Log Out button */}
+                    <button
+                      onClick={useLogout}
+                      className='mt-2 bg-red-500 py-2 rounded-md shadow-xl w-full flex items-center justify-center gap-2 hover:bg-red-300'
+                    >
+                      <span className='text-sm text-white'>Log Out</span>
+                      <img src='../log-out.png' alt='log out' width={15} />
+                    </button>
+                  </motion.div>
+                </AnimatePresence>
+              )}
+            </div>
           )}
         </div>
       </div>
