@@ -30,8 +30,8 @@ const UserSocials = ({ user }: { user: userType }) => {
           alt='link'
           width={35}
           className={`${
-            user.github ? 'p-[0.5px] mt-3' : 'p-2'
-          } rounded-md hover:bg-gray-200 cursor-pointer`}
+            user.github ? 'p-[2px] mt-3' : 'p-2 hover:bg-gray-200'
+          } rounded-md cursor-pointer`}
         />
       </div>
 
@@ -47,11 +47,11 @@ const UserSocials = ({ user }: { user: userType }) => {
                 'Not Connected'
               ) : (
                 <Link
-                  to={user.github}
+                  to={user.website}
                   target='_blank'
                   className='text-blue-600'
                 >
-                  {user.github}
+                  {user.website}
                 </Link>
               )}
             </p>
@@ -62,8 +62,8 @@ const UserSocials = ({ user }: { user: userType }) => {
           alt='link'
           width={35}
           className={`${
-            user.twitter ? 'p-[0.5px] mt-3' : 'p-2'
-          } rounded-md hover:bg-gray-200 cursor-pointer`}
+            user.website ? 'p-[2px] mt-3' : 'p-2 hover:bg-gray-200'
+          } rounded-md cursor-pointer`}
         />
       </div>
 
@@ -79,11 +79,11 @@ const UserSocials = ({ user }: { user: userType }) => {
                 'Not Connected'
               ) : (
                 <Link
-                  to={user.github}
+                  to={user.instagram}
                   target='_blank'
                   className='text-blue-600'
                 >
-                  {user.github}
+                  {user.instagram}
                 </Link>
               )}
             </p>
@@ -94,8 +94,8 @@ const UserSocials = ({ user }: { user: userType }) => {
           alt='link'
           width={35}
           className={`${
-            user.instagram ? 'p-[0.5px] mt-3' : 'p-2'
-          } rounded-md hover:bg-gray-200 cursor-pointer`}
+            user.instagram ? 'p-[2px] mt-3' : 'p-2 hover:bg-gray-200'
+          } rounded-md cursor-pointer`}
         />
       </div>
 
@@ -111,11 +111,11 @@ const UserSocials = ({ user }: { user: userType }) => {
                 'Not Connected'
               ) : (
                 <Link
-                  to={user.github}
+                  to={user.twitter}
                   target='_blank'
                   className='text-blue-600'
                 >
-                  {user.github}
+                  {user.twitter}
                 </Link>
               )}
             </p>
@@ -126,8 +126,8 @@ const UserSocials = ({ user }: { user: userType }) => {
           alt='link'
           width={35}
           className={`${
-            user.twitter ? 'p-[0.5px] mt-3' : 'p-2'
-          } rounded-md hover:bg-gray-200 cursor-pointer`}
+            user.twitter ? 'p-[2px] mt-3' : 'p-2 hover:bg-gray-200'
+          } rounded-md cursor-pointer`}
         />
       </div>
     </div>
