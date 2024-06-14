@@ -3,10 +3,12 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
 import { useState } from 'react';
 import UserSocials from '../components/UserSocials';
+import ProfileUpdateModal from '../components/modals/ProfileUpdateModal';
 
 const Profile = () => {
   const currentUser = useSelector((state: RootState) => state.user.currentUser);
   const [showUserDetails, setShowUserDetails] = useState(true);
+  const [profileEdit, setProfileEdit] = useState(false);
 
   return (
     <>
@@ -52,7 +54,8 @@ const Profile = () => {
                   className='
                   flex items-center gap-1 py-2 px-3 rounded-md cursor-pointer hover:bg-[#dddddd8a]'
                 >
-                  My Blogs
+                  <img src='../my-blogs.png' alt='blogs' width={20} />
+                  <span> My Blogs</span>
                 </Link>
               </div>
 
@@ -71,22 +74,35 @@ const Profile = () => {
                     </span>
                   </p>
                   <p>
-                    Country: <span className='text-[#555555ca]'></span>
+                    Country: {currentUser.Country}
+                    <span className='text-[#555555ca]'></span>
                   </p>
                   <p>
-                    Occupation: <span className='text-[#555555ca]'></span>
+                    Occupation: {currentUser.Occupation}
+                    <span className='text-[#555555ca]'></span>
                   </p>
                   <p>
-                    Skills: <span className='text-[#555555ca]'></span>
+                    Skills: {currentUser.Skills}
+                    <span className='text-[#555555ca]'></span>
                   </p>
                 </div>
               ) : (
                 <UserSocials user={currentUser} />
               )}
+              <button
+                onClick={() => {
+                  setProfileEdit(true);
+                }}
+                className='editProfile px-4 py-2 bg-purple-300 rounded-sm text-white text-lg cursor-pointer'
+              >
+                Edit Profile
+              </button>
             </div>
           </div>
         </div>
       </div>
+
+      {profileEdit && <ProfileUpdateModal setProfileEdit={setProfileEdit} />}
     </>
   );
 };

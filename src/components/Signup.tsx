@@ -118,7 +118,12 @@ const Signup = ({
               </span>
             </p>
 
-            <Button type='submit'>Signup</Button>
+            <Button
+              type='submit'
+              className=' reusable-button manrope-normal self-center'
+            >
+              Signup
+            </Button>
           </form>
 
           {/* OR */}

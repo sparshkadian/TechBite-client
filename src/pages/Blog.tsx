@@ -1,6 +1,5 @@
 import { useParams, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-import Navbar from '../components/Navbar';
 import { useSelector } from 'react-redux';
 
 const Blog = () => {
@@ -14,7 +13,6 @@ const Blog = () => {
 
   return (
     <>
-      <Navbar show={false} />
       {/* Title */}
       <div className='px-4 pb-7 mt-[60px] max-w-4xl mx-auto flex flex-col gap-8'>
         <h1 className='manrope-bold text-3xl sm:text-5xl'>{blogTitle}</h1>

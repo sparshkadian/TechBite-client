@@ -1,12 +1,14 @@
 const Button = ({
   children,
   type,
+  className,
 }: {
   type: 'submit' | 'reset' | 'button';
+  className: string;
   children: React.ReactNode;
 }) => {
   return (
-    <button type={type} className='reusable-button manrope-normal self-center'>
+    <button type={type} className={className}>
       {children}
     </button>
   );

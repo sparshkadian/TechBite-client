@@ -1,16 +1,20 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useProfileActions } from '../hooks/useProfileActions';
+import { useEffect } from 'react';
 
 const ProfileOptions = () => {
   const { useLogout } = useProfileActions();
+
+  useEffect(() => {});
+
   return (
     <motion.div
       initial={{ opacity: 0, height: 0 }}
       animate={{ opacity: 1, height: '180px' }}
       exit={{ opacity: 0, height: 0 }}
       transition={{ duration: 0.3 }}
-      className='z-[10] absolute bg-white border-2 h-[180px] p-2 w-[200px] right-3 top-[50px] rounded-md shadow-md flex flex-col items-center gap-3'
+      className='profileOptions z-[10] absolute bg-white border-2 h-[180px] p-2 w-[200px] right-3 top-[50px] rounded-md shadow-md flex flex-col items-center gap-3'
     >
       {/* Profile */}
       <Link to='/profile' className='profileOption'>

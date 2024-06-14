@@ -18,9 +18,7 @@ const App = () => {
   const location = useLocation();
   return (
     <>
-      {(location.pathname === '/' || location.pathname === '/profile') && (
-        <Navbar show={true} />
-      )}
+      {location.pathname !== '/auth/*' && <Navbar show={true} />}
       <MoveToTop />
 
       <MoveToTop />

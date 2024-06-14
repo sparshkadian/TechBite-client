@@ -2,10 +2,14 @@ import { userType } from '../types';
 import { Link } from 'react-router-dom';
 
 const UserSocials = ({ user }: { user: userType }) => {
+  const handleImageClick = (containerId: string) => {
+    console.log(containerId);
+  };
+
   return (
     <div className='w-4/5 flex flex-col gap-4'>
       {/* Github */}
-      <div className='flex items-center justify-between'>
+      <div className='github flex items-center justify-between'>
         <div className='flex items-center gap-2'>
           <img src='../github.png' alt='github' width={30} />
           <div>
@@ -26,6 +30,9 @@ const UserSocials = ({ user }: { user: userType }) => {
           </div>
         </div>
         <img
+          onClick={() => {
+            handleImageClick('github');
+          }}
           src={user.github ? '../dustbin.png' : '../link.png'}
           alt='link'
           width={35}
@@ -36,7 +43,7 @@ const UserSocials = ({ user }: { user: userType }) => {
       </div>
 
       {/* website */}
-      <div className='flex items-center justify-between'>
+      <div className='website flex items-center justify-between'>
         <div className='flex items-center gap-2'>
           <img src='../website.png' alt='github' width={30} />
           <div>
@@ -68,7 +75,7 @@ const UserSocials = ({ user }: { user: userType }) => {
       </div>
 
       {/* instagram */}
-      <div className='flex items-center justify-between'>
+      <div className='instagram flex items-center justify-between'>
         <div className='flex items-center gap-2'>
           <img src='../instagram.png' alt='github' width={30} />
           <div>
@@ -100,7 +107,7 @@ const UserSocials = ({ user }: { user: userType }) => {
       </div>
 
       {/* Twitter */}
-      <div className='flex items-center justify-between'>
+      <div className='twitter flex items-center justify-between'>
         <div className='flex items-center gap-2'>
           <img src='../twitter.png' alt='github' width={30} />
           <div>
