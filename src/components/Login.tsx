@@ -108,7 +108,12 @@ const Login = ({
                 Forgot Password?
               </p>
             </div>
-            <Button type='submit'>Login</Button>
+            <Button
+              type='submit'
+              className='reusable-button manrope-normal self-center'
+            >
+              Login
+            </Button>
           </form>
 
           {/* OR */}

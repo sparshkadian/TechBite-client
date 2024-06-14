@@ -17,7 +17,7 @@ export interface userBlogType {
 }
 
 export interface userType {
-  id: number;
+  _id: number;
   name: string;
   userName: string;
   email: string;

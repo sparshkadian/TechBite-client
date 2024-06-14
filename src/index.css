@@ -4,6 +4,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* GRADIENT */
+.purple-blue-gradient {
+  background: linear-gradient(to right, rgb(59, 131, 246), #a955f7);
+}
+
+.purple-blue-gradient:hover {
+  background: linear-gradient(to right, #a955f7, rgb(59, 131, 246));
+}
+
 /* FONTS */
 .manrope-bold {
   font-family: 'Manrope', sans-serif;
@@ -174,4 +183,13 @@
 /* BLOG */
 .blog-userAvatar {
   background: linear-gradient(to right, rgb(59, 131, 246), #a955f7);
+}
+
+/* PROFILE */
+.editProfile {
+  background: linear-gradient(to right, rgb(59, 131, 246), #a955f7);
+}
+
+.editProfile:hover {
+  background: linear-gradient(to right, #a955f7, rgb(59, 131, 246));
 }

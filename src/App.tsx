@@ -8,18 +8,30 @@ import CreateBlog from './pages/CreateBlog';
 import Protected from './components/Protected';
 import Profile from './pages/Profile';
 import Blog from './pages/Blog';
+import UserBlogs from './pages/UserBlogs';
 import MoveToTop from './components/MoveToTop';
 import PageNotFound from './pages/PageNotFound';
+import UnderDev from './components/UnderDev';
 import { Toaster } from 'react-hot-toast';
 
 const App = () => {
   const location = useLocation();
   return (
     <>
-      {location.pathname === '/' && <Navbar show={true} />}
+      {location.pathname !== '/auth/*' && <Navbar show={true} />}
+      <MoveToTop />
+
       <MoveToTop />
       <Routes>
-        <Route path='/' element={<Hero />} />
+        <Route
+          path='/'
+          element={
+            <>
+              <UnderDev />
+              <Hero />
+            </>
+          }
+        />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/auth/:signOrLogin' element={<SignupOrLogin />} />
@@ -38,6 +50,15 @@ const App = () => {
           element={
             <Protected>
               <Profile />
+            </Protected>
+          }
+        />
+        <Route
+          // Later path will be user's name
+          path='/myBlogs'
+          element={
+            <Protected>
+              <UserBlogs />
             </Protected>
           }
         />

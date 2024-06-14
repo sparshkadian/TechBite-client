@@ -2,10 +2,14 @@ import { userType } from '../types';
 import { Link } from 'react-router-dom';
 
 const UserSocials = ({ user }: { user: userType }) => {
+  const handleImageClick = (containerId: string) => {
+    console.log(containerId);
+  };
+
   return (
     <div className='w-4/5 flex flex-col gap-4'>
       {/* Github */}
-      <div className='flex items-center justify-between'>
+      <div className='github flex items-center justify-between'>
         <div className='flex items-center gap-2'>
           <img src='../github.png' alt='github' width={30} />
           <div>
@@ -26,17 +30,20 @@ const UserSocials = ({ user }: { user: userType }) => {
           </div>
         </div>
         <img
+          onClick={() => {
+            handleImageClick('github');
+          }}
           src={user.github ? '../dustbin.png' : '../link.png'}
           alt='link'
           width={35}
           className={`${
-            user.github ? 'p-[0.5px] mt-3' : 'p-2'
-          } rounded-md hover:bg-gray-200 cursor-pointer`}
+            user.github ? 'p-[2px] mt-3' : 'p-2 hover:bg-gray-200'
+          } rounded-md cursor-pointer`}
         />
       </div>
 
       {/* website */}
-      <div className='flex items-center justify-between'>
+      <div className='website flex items-center justify-between'>
         <div className='flex items-center gap-2'>
           <img src='../website.png' alt='github' width={30} />
           <div>
@@ -47,11 +54,11 @@ const UserSocials = ({ user }: { user: userType }) => {
                 'Not Connected'
               ) : (
                 <Link
-                  to={user.github}
+                  to={user.website}
                   target='_blank'
                   className='text-blue-600'
                 >
-                  {user.github}
+                  {user.website}
                 </Link>
               )}
             </p>
@@ -62,13 +69,13 @@ const UserSocials = ({ user }: { user: userType }) => {
           alt='link'
           width={35}
           className={`${
-            user.twitter ? 'p-[0.5px] mt-3' : 'p-2'
-          } rounded-md hover:bg-gray-200 cursor-pointer`}
+            user.website ? 'p-[2px] mt-3' : 'p-2 hover:bg-gray-200'
+          } rounded-md cursor-pointer`}
         />
       </div>
 
       {/* instagram */}
-      <div className='flex items-center justify-between'>
+      <div className='instagram flex items-center justify-between'>
         <div className='flex items-center gap-2'>
           <img src='../instagram.png' alt='github' width={30} />
           <div>
@@ -79,11 +86,11 @@ const UserSocials = ({ user }: { user: userType }) => {
                 'Not Connected'
               ) : (
                 <Link
-                  to={user.github}
+                  to={user.instagram}
                   target='_blank'
                   className='text-blue-600'
                 >
-                  {user.github}
+                  {user.instagram}
                 </Link>
               )}
             </p>
@@ -94,13 +101,13 @@ const UserSocials = ({ user }: { user: userType }) => {
           alt='link'
           width={35}
           className={`${
-            user.instagram ? 'p-[0.5px] mt-3' : 'p-2'
-          } rounded-md hover:bg-gray-200 cursor-pointer`}
+            user.instagram ? 'p-[2px] mt-3' : 'p-2 hover:bg-gray-200'
+          } rounded-md cursor-pointer`}
         />
       </div>
 
       {/* Twitter */}
-      <div className='flex items-center justify-between'>
+      <div className='twitter flex items-center justify-between'>
         <div className='flex items-center gap-2'>
           <img src='../twitter.png' alt='github' width={30} />
           <div>
@@ -111,11 +118,11 @@ const UserSocials = ({ user }: { user: userType }) => {
                 'Not Connected'
               ) : (
                 <Link
-                  to={user.github}
+                  to={user.twitter}
                   target='_blank'
                   className='text-blue-600'
                 >
-                  {user.github}
+                  {user.twitter}
                 </Link>
               )}
             </p>
@@ -126,8 +133,8 @@ const UserSocials = ({ user }: { user: userType }) => {
           alt='link'
           width={35}
           className={`${
-            user.twitter ? 'p-[0.5px] mt-3' : 'p-2'
-          } rounded-md hover:bg-gray-200 cursor-pointer`}
+            user.twitter ? 'p-[2px] mt-3' : 'p-2 hover:bg-gray-200'
+          } rounded-md cursor-pointer`}
         />
       </div>
     </div>
