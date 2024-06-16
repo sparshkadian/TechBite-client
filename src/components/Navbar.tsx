@@ -51,7 +51,7 @@ const Navbar = ({ show }: { show: boolean }) => {
           {!currentUser && (
             <Link
               to='/auth/signup'
-              className='text-[16px] signup text-white px-6 py-3 rounded-xl'
+              className='text-[16px] signup text-white px-6 py-3 rounded-sm shadow-md'
             >
               Signup
             </Link>
@@ -66,16 +66,19 @@ const Navbar = ({ show }: { show: boolean }) => {
               }}
             >
               <img
-                src='../avatar.png'
+                src={currentUser.avatar}
                 alt='avatar'
                 className='cursor-pointer rounded-full cusor-pointer'
+                id='profileOptions'
                 width={45}
                 height={45}
               />
 
               {openProfileOption && (
                 <AnimatePresence>
-                  <ProfileOptions />
+                  <ProfileOptions
+                    setOpenProfileOptions={setOpenProfileOptions}
+                  />
                 </AnimatePresence>
               )}
             </div>

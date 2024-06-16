@@ -28,13 +28,15 @@ const Signup = ({
     }));
   };
 
-  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    useSignup(formData);
+    const result = await useSignup(formData);
     setFormData({ name: '', email: '', password: '' });
-    setTimeout(() => {
-      navigate('/');
-    }, 1000);
+    if (result) {
+      setTimeout(() => {
+        navigate('/');
+      }, 0);
+    }
   };
 
   return (

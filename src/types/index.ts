@@ -41,3 +41,9 @@ export interface loginFormDataType {
   email: string;
   password: string;
 }
+
+export interface googleAuthUserDetails {
+  email: string;
+  name: string;
+  avatar: string;
+}

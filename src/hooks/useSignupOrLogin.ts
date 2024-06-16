@@ -7,8 +7,12 @@ import {
   loginStart,
   loginSuccess,
   loginFailure,
+  OAuthStart,
+  OAuthSuccess,
+  OAuthFailure,
 } from '../redux/user/userSlice';
 import { useDispatch } from 'react-redux';
+import { googleAuthUserDetails } from '../types';
 
 export const useSignupOrLogin = () => {
   const dispatch = useDispatch();
@@ -24,11 +28,13 @@ export const useSignupOrLogin = () => {
         body: JSON.stringify(formData),
       });
       const data = await res.json();
-      dispatch(signUpSuccess(data.user));
-      toast.success('Signup successfull');
       if (data.status != 'success') {
         dispatch(signUpFailure());
         throw new Error(data.message);
+      } else {
+        dispatch(signUpSuccess(data.user));
+        toast.success('Signup successfull');
+        return true;
       }
     } catch (error: any) {
       console.log(error);
@@ -47,11 +53,13 @@ export const useSignupOrLogin = () => {
         body: JSON.stringify(formData),
       });
       const data = await res.json();
-      dispatch(loginSuccess(data.user));
-      toast.success('Login successfull');
       if (data.status != 'success') {
         dispatch(loginFailure());
         throw new Error(data.message);
+      } else {
+        dispatch(loginSuccess(data.user));
+        toast.success('Login successfull');
+        return true;
       }
     } catch (error: any) {
       console.log(error);
@@ -59,5 +67,30 @@ export const useSignupOrLogin = () => {
     }
   };
 
-  return { useSignup, useLogin };
+  const googleAuth = async (userDetails: googleAuthUserDetails) => {
+    try {
+      dispatch(OAuthStart());
+      const res = await fetch('http://localhost:4100/api/auth/google', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(userDetails),
+      });
+      const data = await res.json();
+      if (data.status != 'success') {
+        dispatch(OAuthFailure());
+        throw new Error(data.message);
+      } else {
+        dispatch(OAuthSuccess(data.user));
+        toast.success('Signed In');
+        return true;
+      }
+    } catch (error: any) {
+      console.log(error);
+      toast.error(error.message);
+    }
+  };
+
+  return { useSignup, useLogin, googleAuth };
 };

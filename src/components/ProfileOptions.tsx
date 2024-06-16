@@ -1,20 +1,37 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useProfileActions } from '../hooks/useProfileActions';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
-const ProfileOptions = () => {
+const ProfileOptions = ({
+  setOpenProfileOptions,
+}: {
+  setOpenProfileOptions: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   const { useLogout } = useProfileActions();
 
-  useEffect(() => {});
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.id !== 'profileOptions') {
+        setOpenProfileOptions(false);
+      }
+    };
+
+    window.addEventListener('click', handleClickOutside);
+
+    return () => {
+      window.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
 
   return (
     <motion.div
       initial={{ opacity: 0, height: 0 }}
-      animate={{ opacity: 1, height: '180px' }}
+      animate={{ opacity: 1, height: '125px' }}
       exit={{ opacity: 0, height: 0 }}
       transition={{ duration: 0.3 }}
-      className='profileOptions z-[10] absolute bg-white border-2 h-[180px] p-2 w-[200px] right-3 top-[50px] rounded-md shadow-md flex flex-col items-center gap-3'
+      className='profileOptions z-[10] absolute bg-white border-2 h-[125px] p-2 w-[200px] right-3 top-[50px] rounded-md shadow-md flex flex-col items-center gap-3'
     >
       {/* Profile */}
       <Link to='/profile' className='profileOption'>
@@ -23,10 +40,10 @@ const ProfileOptions = () => {
       </Link>
 
       {/* Settings */}
-      <Link to='#' className='profileOption'>
+      {/* <Link to='#' className='profileOption'>
         <img src='../settings.png' alt='user' width={20} />
         <span>Settings</span>
-      </Link>
+      </Link> */}
 
       {/* Log Out button */}
       <button
