@@ -42,6 +42,16 @@ const userSlice = createSlice({
     profileUpdateFailure: (state) => {
       state.loading = false;
     },
+    OAuthStart: (state) => {
+      state.loading = true;
+    },
+    OAuthSuccess: (state, action) => {
+      state.loading = false;
+      state.currentUser = action.payload;
+    },
+    OAuthFailure: (state) => {
+      state.loading = false;
+    },
   },
 });
 
@@ -56,6 +66,9 @@ export const {
   profileUpdateStart,
   profileUpdateSuccess,
   profileUpdateFailure,
+  OAuthStart,
+  OAuthSuccess,
+  OAuthFailure,
 } = userSlice.actions;
 
 export default userSlice.reducer;

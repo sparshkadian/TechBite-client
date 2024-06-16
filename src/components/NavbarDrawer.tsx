@@ -34,7 +34,7 @@ const NavbarDrawer = ({
           {currentUser && (
             <Link to='/profile'>
               <img
-                src='../avatar.png'
+                src={currentUser.avatar}
                 alt='avatar'
                 className='cursor-pointer rounded-full cusor-pointer'
                 width={100}

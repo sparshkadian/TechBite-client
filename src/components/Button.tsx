@@ -1,14 +1,18 @@
+import { MouseEventHandler } from 'react';
+
 const Button = ({
   children,
   type,
   className,
+  onClick,
 }: {
+  onClick?: MouseEventHandler<HTMLButtonElement>;
   type: 'submit' | 'reset' | 'button';
   className: string;
   children: React.ReactNode;
 }) => {
   return (
-    <button type={type} className={className}>
+    <button onClick={onClick} type={type} className={className}>
       {children}
     </button>
   );

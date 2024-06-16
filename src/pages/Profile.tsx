@@ -12,7 +12,7 @@ const Profile = () => {
 
   return (
     <>
-      <div className='px-5 pb-10 mt-10'>
+      <div className='px-5 pb-10 mt-5'>
         <div className=''>
           {/* Name and Image */}
           <div className='max-w-5xl mx-auto avatar-socialsContainer flex flex-col gap-5 p-2'>
@@ -62,12 +62,6 @@ const Profile = () => {
               {showUserDetails ? (
                 <div className='border-t mt-1 pt-3 w-4/5 flex flex-col gap-2 items-center md:items-start manrope-normal text-lg'>
                   <p>
-                    Username:{' '}
-                    <span className='text-[#555555ca]'>
-                      {currentUser.userName}
-                    </span>
-                  </p>
-                  <p>
                     Email:{' '}
                     <span className='text-[#555555ca]'>
                       {currentUser.email}
@@ -89,14 +83,16 @@ const Profile = () => {
               ) : (
                 <UserSocials user={currentUser} />
               )}
-              <button
-                onClick={() => {
-                  setProfileEdit(true);
-                }}
-                className='editProfile px-4 py-2 bg-purple-300 rounded-sm text-white text-lg cursor-pointer'
-              >
-                Edit Profile
-              </button>
+              {showUserDetails && (
+                <button
+                  onClick={() => {
+                    setProfileEdit(true);
+                  }}
+                  className='editProfile px-4 py-2 bg-purple-300 rounded-sm text-white cursor-pointer'
+                >
+                  Edit Profile
+                </button>
+              )}
             </div>
           </div>
         </div>

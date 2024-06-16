@@ -27,13 +27,15 @@ const Login = ({
     }));
   };
 
-  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    useLogin(formData);
+    const loginResult = await useLogin(formData);
     setFormData({ email: '', password: '' });
-    setTimeout(() => {
-      navigate('/');
-    }, 1000);
+    if (loginResult) {
+      setTimeout(() => {
+        navigate('/');
+      }, 0);
+    }
   };
 
   return (
