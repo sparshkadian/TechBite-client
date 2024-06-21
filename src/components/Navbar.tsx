@@ -66,7 +66,10 @@ const Navbar = ({ show }: { show: boolean }) => {
               }}
             >
               <img
-                src={currentUser.avatar}
+                src={
+                  currentUser.avatar ||
+                  'https://cdn-icons-png.flaticon.com/128/2202/2202112.png'
+                }
                 alt='avatar'
                 className='cursor-pointer rounded-full cusor-pointer'
                 id='profileOptions'
