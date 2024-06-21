@@ -16,7 +16,6 @@ export const useProfileActions = () => {
 
   const updateProfile = async (userId: string | number, dataToSend: any) => {
     try {
-      console.log(dataToSend, userId);
       dispatch(profileUpdateStart());
       const res = await fetch(
         `http://localhost:4100/api/user/updateMe/${userId}`,
@@ -29,7 +28,6 @@ export const useProfileActions = () => {
         }
       );
       const data = await res.json();
-      console.log(data);
       if (data.status != 'success') {
         throw new Error(data.message);
       }

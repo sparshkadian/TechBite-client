@@ -4,11 +4,13 @@ import { RootState } from '../redux/store';
 import { useState } from 'react';
 import UserSocials from '../components/UserSocials';
 import ProfileUpdateModal from '../components/modals/ProfileUpdateModal';
+import UpdateAvatar from '../components/UpdateAvatar';
 
 const Profile = () => {
   const currentUser = useSelector((state: RootState) => state.user.currentUser);
   const [showUserDetails, setShowUserDetails] = useState(true);
   const [profileEdit, setProfileEdit] = useState(false);
+  const [updateAvatar, setUpdateAvatar] = useState(false);
 
   return (
     <>
@@ -17,14 +19,38 @@ const Profile = () => {
           {/* Name and Image */}
           <div className='max-w-5xl mx-auto avatar-socialsContainer flex flex-col gap-5 p-2'>
             <div className='bg-white w-full flex flex-col gap-5 py-4 items-center'>
-              <img
-                src='../avatar.png'
-                alt='avatar'
-                className='w-[120px] h-[120px] object-cover'
-              />
+              {/* avatar container*/}
+              <div className='relative'>
+                <img
+                  src={
+                    currentUser.avatar ||
+                    'https://cdn-icons-png.flaticon.com/128/2202/2202112.png'
+                  }
+                  alt='avatar'
+                  className='w-[150px] h-[150px] object-cover rounded-full'
+                />
+                <div
+                  onClick={() => {
+                    setUpdateAvatar(true);
+                  }}
+                  className='cursor-pointer absolute -bottom-3 left-0 flex items-center gap-1 bg-white px-2 py-1 border rounded-md'
+                  id='updateAvatar'
+                >
+                  <img
+                    src='../editProfileImage.png'
+                    alt='edit'
+                    width={12}
+                    id='updateAvatar'
+                  />
+                  <span id='updateAvatar'>Edit</span>
+                  {updateAvatar && (
+                    <UpdateAvatar setUpdateAvatar={setUpdateAvatar} />
+                  )}
+                </div>
+              </div>
               <div className='flex flex-col items-center text-center'>
                 {/* registered name */}
-                <p className='manrope-semibold text-3xl tracking-tight'>
+                <p className='mt-2 manrope-semibold text-3xl tracking-tight'>
                   {currentUser.name}
                 </p>
               </div>
