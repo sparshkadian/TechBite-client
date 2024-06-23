@@ -19,9 +19,10 @@ const ProfileUpdateModal = ({
     name: currentUser.name,
     Country: currentUser.Country,
     Occupation: currentUser.Occupation,
+    Skills: currentUser.Skills.join(' ,'),
   });
 
-  const { name, Country, Occupation } = formData;
+  const { name, Country, Occupation, Skills } = formData;
 
   const handleOk = () => {
     setIsModalOpen(false);
@@ -54,64 +55,68 @@ const ProfileUpdateModal = ({
         open={isModalOpen}
         onOk={handleOk}
         onCancel={handleCancel}
-        width={700}
+        width={600}
       >
         <form
           onSubmit={handleFormSubmit}
-          className='manrope-semibold flex flex-wrap justify-between gap-5 pr-7'
+          className='manrope-semibold flex flex-col items-center gap-5'
         >
           {/* name */}
-          <div className='flex items-center gap-2'>
-            <p>Name: </p>
+          <div className='flex items-center gap-2 w-full justify-center'>
+            <p className='text-base'>Name: </p>
             <input
               type='text'
               onChange={handleInputChange}
               id='name'
               value={name}
-              className='border-2 py-1 px-2 rounded-md'
+              className='border-2 py-1 px-2 rounded-md text-base w-[60%]'
             />
           </div>
 
           {/* Country */}
-          <div className='flex items-center gap-2'>
-            <p>Country: </p>
+          <div className='flex items-center gap-2 w-full justify-center'>
+            <p className='text-base'>Country: </p>
             <input
               type='text'
               onChange={handleInputChange}
               id='Country'
               value={Country}
-              className='border-2 py-1 px-2 rounded-md'
+              className='border-2 py-1 px-2 rounded-md text-base mr-4 w-[60%]'
             />
           </div>
 
           {/* Occupation */}
-          <div className='flex items-center gap-2'>
-            <p>Occupation: </p>
+          <div className='flex items-center gap-2 w-full justify-center'>
+            <p className='text-base'>Occupation: </p>
             <input
               type='text'
               onChange={handleInputChange}
               id='Occupation'
               value={Occupation}
-              className='border-2 py-1 px-2 rounded-md'
+              className='border-2 py-1 px-2 rounded-md text-base mr-10 w-[60%]'
             />
           </div>
 
           {/* Skills */}
-          {/* <div className='flex items-center gap-2'>
-            <p>Skills: </p>
+          <div className='flex items-center gap-2 w-full justify-center'>
+            <p className='text-base'>Skills: </p>
             <input
+              placeholder='Enter , seperated skills'
+              onChange={handleInputChange}
+              value={Skills}
               type='text'
-              id='name'
-              //   value={name}
-              className='border-2 py-1 px-2 rounded-md'
+              id='Skills'
+              className='border-2 py-1 px-2 rounded-md text-base ml-3 w-[60%]'
+              spellCheck={false}
             />
-          </div> */}
+          </div>
+
           <div className='mt-2 w-full flex justify-center'>
             <Button
               type='submit'
               className='purple-blue-gradient px-4 py-2 rounded-sm text-white shadow-md text-[16px] w-[120px]'
             >
-              Edit Profile
+              Confirm
             </Button>
           </div>
         </form>

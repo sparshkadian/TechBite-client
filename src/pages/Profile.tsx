@@ -104,7 +104,7 @@ const Profile = () => {
                     <span className='text-[#555555ca]'></span>
                   </p>
                   <p>
-                    Skills: {currentUser.Skills}
+                    Skills: {currentUser.Skills.join(' ,')}
                     <span className='text-[#555555ca]'></span>
                   </p>
                 </div>

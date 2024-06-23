@@ -32,7 +32,7 @@ const App = () => {
           path='/'
           element={
             <>
-              <UnderDev />
+              {/* <UnderDev /> */}
               <Hero />
             </>
           }
