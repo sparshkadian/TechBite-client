@@ -42,7 +42,7 @@ const ProfileUpdateModal = ({
 
   const handleFormSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    updateProfile(currentUser._id, formData);
+    updateProfile(formData);
     toast.success('Profile Updated Successfully');
   };
 

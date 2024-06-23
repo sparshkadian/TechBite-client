@@ -42,7 +42,7 @@ const SocialUpdateModal = ({
 
   const handleFormSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    updateProfile(currentUser._id, formData);
+    updateProfile(formData);
     toast.success('Socials Updated Successfully');
   };
 

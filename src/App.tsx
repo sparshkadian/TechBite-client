@@ -18,7 +18,12 @@ const App = () => {
   const location = useLocation();
   return (
     <>
-      {location.pathname !== '/auth/*' && <Navbar show={true} />}
+      {location.pathname === '/auth/signup' ||
+      location.pathname === '/auth/login' ? (
+        <Navbar show={false} />
+      ) : (
+        <Navbar show={true} />
+      )}
       <MoveToTop />
 
       <MoveToTop />
@@ -27,7 +32,7 @@ const App = () => {
           path='/'
           element={
             <>
-              <UnderDev />
+              {/* <UnderDev /> */}
               <Hero />
             </>
           }

@@ -19,7 +19,7 @@ const RemoveAvatarModal = ({
     setIsModalOpen(false);
     setRemoveAvatar(false);
     if (currentUser.avatar) {
-      updateProfile(currentUser._id, userData);
+      updateProfile(userData);
       toast('Profile Picture Removed', {
         style: {
           backgroundColor: 'black',
