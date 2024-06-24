@@ -25,8 +25,6 @@ const App = () => {
         <Navbar show={true} />
       )}
       <MoveToTop />
-
-      <MoveToTop />
       <Routes>
         <Route
           path='/'
