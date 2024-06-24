@@ -9,7 +9,7 @@ const UserSocials = ({ user }: { user: userType }) => {
 
   return (
     <>
-      <div className='mt-5 w-full pl-5 sm:w-4/5 lg-w-[60%] grid grid-cols-1 sm:grid-cols-2 gap-y-7 sm:gap-y-10 lg:gap-x-5'>
+      <div className='mt-5 w-full pl-5 sm:w-4/5 lg-w-[60%] flex flex-col sm:grid sm:grid-cols-2 gap-y-5 sm:gap-y-10 lg:gap-x-5'>
         {/* Github */}
         <div className='flex items-center justify-between w-full'>
           <div className='flex items-center gap-2'>
@@ -82,7 +82,7 @@ const UserSocials = ({ user }: { user: userType }) => {
         </div>
 
         {/* Twitter */}
-        <div className='relative twitter flex items-center justify-start sm:ml-6'>
+        <div className='twitter flex items-center justify-start sm:ml-6'>
           <div className='flex items-center gap-2'>
             <img src='../twitter.png' alt='github' width={30} />
             <div>

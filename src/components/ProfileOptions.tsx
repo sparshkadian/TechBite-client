@@ -28,10 +28,10 @@ const ProfileOptions = ({
   return (
     <motion.div
       initial={{ opacity: 0, height: 0 }}
-      animate={{ opacity: 1, height: '125px' }}
+      animate={{ opacity: 1, height: '180px' }}
       exit={{ opacity: 0, height: 0 }}
       transition={{ duration: 0.3 }}
-      className='profileOptions z-[10] absolute bg-white border-2 h-[125px] p-2 w-[200px] right-3 top-[50px] rounded-md shadow-md flex flex-col items-center gap-3'
+      className='profileOptions z-[10] absolute bg-white border-2 h-[180px] p-2 w-[200px] right-3 top-[50px] rounded-md shadow-md flex flex-col items-center gap-3'
     >
       {/* Profile */}
       <Link to='/profile' className='profileOption'>
@@ -39,11 +39,11 @@ const ProfileOptions = ({
         <span>Profile</span>
       </Link>
 
-      {/* Settings */}
-      {/* <Link to='#' className='profileOption'>
-        <img src='../settings.png' alt='user' width={20} />
-        <span>Settings</span>
-      </Link> */}
+      {/* MyBlogs */}
+      <Link to='/myBlogs' className='profileOption'>
+        <img src='../my-blogs.png' alt='user' width={20} />
+        <span>My Blogs</span>
+      </Link>
 
       {/* Log Out button */}
       <button

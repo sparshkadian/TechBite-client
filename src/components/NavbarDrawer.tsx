@@ -47,24 +47,21 @@ const NavbarDrawer = ({
           )}
 
           <div>
-            <Link to='#s' className='peer hover:text-black'>
-              Settings
+            <Link to='/myBlogs' className='gradient-text'>
+              My Blogs
             </Link>
-            <p className='peer-hover:border-b peer-hover:border-blue-500'></p>
           </div>
 
           <div>
-            <Link to='/about' className='peer hover:text-black'>
+            <Link to='/about' className='hover:gradient-text'>
               About
             </Link>
-            <p className='peer-hover:border-b peer-hover:border-blue-500'></p>
           </div>
 
           <div>
-            <Link to='/contact' className='peer hover:text-black'>
+            <Link to='/contact' className='hover:gradient-text'>
               Contact
             </Link>
-            <p className='peer-hover:border-b peer-hover:border-blue-500'></p>
           </div>
 
           {currentUser && (
