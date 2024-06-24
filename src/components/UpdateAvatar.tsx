@@ -12,7 +12,6 @@ const UpdateAvatar = ({
   const fileRef = useRef<HTMLInputElement>(null);
   const [removeAvatar, setRemoveAvatar] = useState(false);
   const [file, setFile] = useState<File | null>(null);
-  console.log(removeAvatar);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0) {
@@ -24,7 +23,7 @@ const UpdateAvatar = ({
     if (file) {
       const uploadFile = async () => {
         toast('Uploading Profile Picture');
-        await updateAvatarFirebase('lodalassan', file);
+        await updateAvatarFirebase('', file); //setFileName
         setFile(null);
         toast('Upload complete');
       };

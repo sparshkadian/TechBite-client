@@ -7,13 +7,19 @@ export interface latestBlogsType {
   banner: string;
 }
 
+export interface blogComments {
+  blogId: string;
+  userId: string;
+  comment: string;
+}
+
 export interface userBlogType {
-  id: number;
-  banner: string;
+  id?: number;
+  banner: string | undefined;
   title: string;
   content: string;
-  likes: number;
-  comments: number;
+  likes?: number;
+  comments?: [blogComments];
 }
 
 export interface userType {
