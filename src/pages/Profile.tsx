@@ -31,7 +31,7 @@ const Profile = () => {
                 />
                 <div
                   onClick={() => {
-                    setUpdateAvatar(true);
+                    setUpdateAvatar((prev) => !prev);
                   }}
                   className='cursor-pointer absolute -bottom-3 left-0 flex items-center gap-1 bg-white px-2 py-1 border rounded-md'
                   id='updateAvatar'
@@ -42,7 +42,9 @@ const Profile = () => {
                     width={12}
                     id='updateAvatar'
                   />
-                  <span id='updateAvatar'>Edit</span>
+                  <span id='updateAvatar'>
+                    {updateAvatar ? 'Close' : 'Edit'}
+                  </span>
                   {updateAvatar && (
                     <UpdateAvatar setUpdateAvatar={setUpdateAvatar} />
                   )}
@@ -102,7 +104,7 @@ const Profile = () => {
                     <span className='text-[#555555ca]'></span>
                   </p>
                   <p>
-                    Skills: {currentUser.Skills}
+                    Skills: {currentUser.Skills.join(' ,')}
                     <span className='text-[#555555ca]'></span>
                   </p>
                 </div>

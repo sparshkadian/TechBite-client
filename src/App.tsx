@@ -18,9 +18,12 @@ const App = () => {
   const location = useLocation();
   return (
     <>
-      {location.pathname !== '/auth/*' && <Navbar show={true} />}
-      <MoveToTop />
-
+      {location.pathname === '/auth/signup' ||
+      location.pathname === '/auth/login' ? (
+        <Navbar show={false} />
+      ) : (
+        <Navbar show={true} />
+      )}
       <MoveToTop />
       <Routes>
         <Route

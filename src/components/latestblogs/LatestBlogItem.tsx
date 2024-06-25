@@ -33,7 +33,7 @@ const LatestBlogItem = ({ blog }: { blog: latestBlogsType }) => {
 
   return (
     <>
-      <CardContainer key={blog.id}>
+      <CardContainer key={blog._id}>
         <CardBody className='relative group/card shadow-2xl dark:hover:shadow-2xl bg-white border border-black/[0.1] w-auto sm:w-[25rem] h-auto rounded-xl p-6 '>
           {/* Title */}
           <CardItem
@@ -71,10 +71,10 @@ const LatestBlogItem = ({ blog }: { blog: latestBlogsType }) => {
               >
                 <img
                   onClick={() => {
-                    handleBlogLike(blog.id, blog.likes);
+                    handleBlogLike(blog._id, blog.likes);
                   }}
                   src={
-                    blogSelected === blog.id
+                    blogSelected === blog._id
                       ? '../heart-full.png'
                       : '../heart-empty.png'
                   }
@@ -91,7 +91,7 @@ const LatestBlogItem = ({ blog }: { blog: latestBlogsType }) => {
                 className='flex items-center gap-1 text-black text-sm'
               >
                 <img src='../comments.png' alt='comments' width={20} />0
-                {blog.comments}
+                {/* {blog.comments} */}
               </CardItem>
             </div>
 

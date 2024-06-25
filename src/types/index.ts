@@ -1,19 +1,25 @@
 export interface latestBlogsType {
-  id: number;
+  _id: number;
   title: string;
   content: string;
   likes: number;
-  comments: number;
+  comments: blogComments[];
   banner: string;
 }
 
+export interface blogComments {
+  blogId: string;
+  userId: string;
+  comment: string;
+}
+
 export interface userBlogType {
-  id: number;
-  banner: string;
+  _id?: number;
+  banner: string | undefined;
   title: string;
   content: string;
-  likes: number;
-  comments: number;
+  likes?: number;
+  comments?: blogComments[];
 }
 
 export interface userType {
@@ -24,7 +30,7 @@ export interface userType {
   avatar: string;
   Country: string;
   Occupation: string;
-  Skills: [string];
+  Skills: string[];
   github: string;
   website: string;
   instagram: string;

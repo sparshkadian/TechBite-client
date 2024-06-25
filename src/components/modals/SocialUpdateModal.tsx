@@ -40,9 +40,16 @@ const SocialUpdateModal = ({
     }));
   };
 
+  const removeSocial = (e: any) => {
+    setFormData((prevValue) => ({
+      ...prevValue,
+      [e.target.id]: '',
+    }));
+  };
+
   const handleFormSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    updateProfile(currentUser._id, formData);
+    updateProfile(formData);
     toast.success('Socials Updated Successfully');
   };
 
@@ -59,7 +66,7 @@ const SocialUpdateModal = ({
           onSubmit={handleFormSubmit}
           className='manrope-semibold flex flex-col gap-5 items-center'
         >
-          {/* name */}
+          {/* Github */}
           <div className='flex items-center gap-2'>
             <p>Github: </p>
             <input
@@ -69,9 +76,17 @@ const SocialUpdateModal = ({
               value={github}
               className='border-2 py-1 px-2 rounded-md w-[250px]'
             />
+            <img
+              onClick={removeSocial}
+              src='../remove-social.png'
+              alt='remove'
+              width={13}
+              className='ml-5 cursor-pointer'
+              id='github'
+            />
           </div>
 
-          {/* Country */}
+          {/* Website */}
           <div className='flex items-center gap-2'>
             <p>website: </p>
             <input
@@ -81,17 +96,33 @@ const SocialUpdateModal = ({
               value={website}
               className='border-2 py-1 px-2 rounded-md w-[250px] mr-1'
             />
+            <img
+              onClick={removeSocial}
+              src='../remove-social.png'
+              alt='remove'
+              width={13}
+              className='ml-3 cursor-pointer'
+              id='website'
+            />
           </div>
 
-          {/* Occupation */}
+          {/* Instagram */}
           <div className='flex items-center gap-2'>
-            <p>instagram: </p>
+            <p>Instagram: </p>
             <input
               type='text'
               onChange={handleInputChange}
               id='instagram'
               value={instagram}
               className='border-2 py-1 px-2 rounded-md w-[250px] mr-4'
+            />
+            <img
+              onClick={removeSocial}
+              src='../remove-social.png'
+              alt='remove'
+              width={13}
+              className='mr-4 cursor-pointer'
+              id='instagram'
             />
           </div>
 
@@ -105,6 +136,14 @@ const SocialUpdateModal = ({
               value={twitter}
               className='border-2 py-1 px-2 rounded-md w-[250px] ml-2'
             />
+            <img
+              onClick={removeSocial}
+              src='../remove-social.png'
+              alt='remove'
+              width={13}
+              className='ml-3 cursor-pointer'
+              id='twitter'
+            />
           </div>
 
           <div className='mt-2 w-full flex justify-center'>
@@ -112,7 +151,7 @@ const SocialUpdateModal = ({
               type='submit'
               className='purple-blue-gradient px-4 py-2 rounded-sm text-white shadow-md text-[16px] w-[140px]'
             >
-              Edit Socials
+              Confirm
             </Button>
           </div>
         </form>
