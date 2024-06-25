@@ -3,7 +3,7 @@ export interface latestBlogsType {
   title: string;
   content: string;
   likes: number;
-  comments: number;
+  comments: [blogComments];
   banner: string;
 }
 
