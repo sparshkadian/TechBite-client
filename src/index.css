@@ -118,16 +118,14 @@
 }
 
 /* FOOTER */
-.footer {
-  background: linear-gradient(
-    to bottom right,
-    #a955f780,
-    rgba(59, 131, 246, 0.477)
-  );
+.glass-wrapper {
+  background-color: #f5f5f5;
 }
 
-.footer-socials {
-  background: linear-gradient(to bottom right, #a855f7, rgb(59 130 246));
+.footerLogo-container,
+.footerLinks-container {
+  background-color: transparent;
+  backdrop-filter: blur(20px);
 }
 
 /* ******** PAGES ********* */
