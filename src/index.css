@@ -118,12 +118,20 @@
 }
 
 /* FOOTER */
-.footer {
-  background: linear-gradient(
+.glass-wrapper {
+  /* background: linear-gradient(
     to bottom right,
-    #a955f780,
+    #a955f735,
     rgba(59, 131, 246, 0.477)
-  );
+  ); */
+
+  background-color: #f5f5f5;
+}
+
+.footerLogo-container,
+.footerLinks-container {
+  background-color: transparent;
+  backdrop-filter: blur(20px);
 }
 
 .footer-socials {
