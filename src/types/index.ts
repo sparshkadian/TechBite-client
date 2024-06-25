@@ -1,9 +1,9 @@
 export interface latestBlogsType {
-  id: number;
+  _id: number;
   title: string;
   content: string;
   likes: number;
-  comments: [blogComments];
+  comments: blogComments[];
   banner: string;
 }
 
@@ -19,7 +19,7 @@ export interface userBlogType {
   title: string;
   content: string;
   likes?: number;
-  comments?: [blogComments];
+  comments?: blogComments[];
 }
 
 export interface userType {
@@ -30,7 +30,7 @@ export interface userType {
   avatar: string;
   Country: string;
   Occupation: string;
-  Skills: [string];
+  Skills: string[];
   github: string;
   website: string;
   instagram: string;

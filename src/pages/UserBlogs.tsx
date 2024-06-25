@@ -2,14 +2,15 @@ import { userBlogType } from '../types';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
-import { blogActions } from '../hooks/blogActions';
-import { useEffect } from 'react';
+// import { blogActions } from '../hooks/blogActions';
+// import { useEffect } from 'react';
 
 const UserBlogs = () => {
-  const { fetchBlogsDB } = blogActions();
+  // const { fetchBlogsDB } = blogActions();
   const currentUser = useSelector((state: RootState) => state.user.currentUser);
   const userBlogs = useSelector((state: RootState) => state.userBlogs.blogs);
 
+  // Should only run once initially
   // useEffect(() => {
   //   fetchBlogsDB();
   // }, []);
