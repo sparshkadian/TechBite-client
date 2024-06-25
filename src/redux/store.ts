@@ -14,7 +14,7 @@ export interface RootState {
     loading: string;
   };
   userBlogs: {
-    userBlogs: userBlogType;
+    blogs: userBlogType[];
     loading: string;
   };
 }

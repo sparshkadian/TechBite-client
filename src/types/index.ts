@@ -14,7 +14,7 @@ export interface blogComments {
 }
 
 export interface userBlogType {
-  id?: number;
+  _id?: number;
   banner: string | undefined;
   title: string;
   content: string;

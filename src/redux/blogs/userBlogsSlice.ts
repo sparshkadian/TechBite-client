@@ -1,9 +1,8 @@
-//@ts-nocheck
 import { createSlice } from '@reduxjs/toolkit';
-import userSlice from '../user/userSlice';
+import { userBlogType } from '../../types';
 
 const initialState = {
-  blogs: [],
+  blogs: [] as userBlogType[],
   loading: false,
 };
 
@@ -11,6 +10,9 @@ const userBlogsSlice = createSlice({
   name: 'blogs',
   initialState,
   reducers: {
+    loadUserBlogs: (state, action) => {
+      state.blogs = [action.payload];
+    },
     createBlogStart: (state) => {
       state.loading = true;
     },
@@ -24,7 +26,11 @@ const userBlogsSlice = createSlice({
   },
 });
 
-export const { createBlogStart, createBlogSuccess, createBlogFailure } =
-  userBlogsSlice.actions;
+export const {
+  loadUserBlogs,
+  createBlogStart,
+  createBlogSuccess,
+  createBlogFailure,
+} = userBlogsSlice.actions;
 
 export default userBlogsSlice.reducer;
